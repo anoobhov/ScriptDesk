@@ -5,22 +5,40 @@
 body{
     height: 100vh;
     overflow: hidden;
+    background: linear-gradient(270deg,rgb(207, 206, 206),rgb(254, 240, 214));
 }
 #navbar{
     display: flex;
     justify-content: space-between;
     padding: 1.5rem;
-    /* background-color: orange; */
+    /* background-color: rgb(255, 255, 255); */
+    background: linear-gradient(270deg,rgb(166, 166, 166),rgb(255, 232, 186));
     align-items: baseline;
-    
 }
 #logo{
     font: bold;
     font-family: sans-serif;
     font-size: 2rem;
 }
-.rightnav{
+.links{
     margin-right: 0.9rem;
+    background: linear-gradient(135deg,pink,cornsilk);
+    padding: 9px;
+    border-radius: 3px;
+    text-decoration: none;
+    /* transition: transform 0.3s ease; */
+}
+.links:hover{
+    background: linear-gradient(135deg,rgb(255, 102, 128),rgb(253, 217, 73));
+    /* margin-left: 0.3rem;
+    margin-right: 0.3rem; */
+    /* letter-spacing: 5px; */
+    /* transform: scale(0.); */
+}
+.links:active{
+    /* transform: scale(0.8); */
+    color: black;
+    transform: scale(0.7);
 }
 nav{
     margin-right: 0.5rem;
@@ -42,17 +60,26 @@ main{
 .line>h1{
     font-size: 5rem;
 }
-.line>button{
+.buttons{
     padding: 0.5rem;
     font-size: x-large;
     border-radius: 5px;
     outline: none;
     border: none;
-    background-color: cornsilk;
+    margin-top: 5 rem;
+    /* background-color: cornsilk; */
     margin-right: 2rem;
+    letter-spacing: 5px;
 }
 
+footer{
+    width: 100%;
+    height: 12%;
+    /* background-color: white; */
+    background: linear-gradient(270deg,rgb(166, 166, 166),rgb(255, 229, 181));
+    text-align: center;
 
+}
 /* animation */
 .dot {
     position: absolute;
