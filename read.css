@@ -16,7 +16,8 @@ header{
     left: 0;
     padding: 1.5rem;
     /* background-color: rgb(255, 255, 255); */
-    background: linear-gradient(270deg,rgb(166, 166, 166),rgb(255, 232, 186));
+    background: linear-gradient(270deg,rgb(166, 166, 166,0.8),rgb(255, 232, 186,0.8));
+    backdrop-filter: blur(10px);
     align-items: baseline;
     position: fixed;
     z-index: 2;
