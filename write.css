@@ -37,23 +37,54 @@ header{
 
 form{
     margin-top: 150px;
-    /* display: flex;
+}
+#main-area{
+    display: flex;
     flex-direction: column;
-    justify-content: center; */
+    justify-content: center;
     /* width: 100%; */
 }
-.forms{
+.writing-section{
     font-size: xx-large;
-    width: 80%;
+    /* width: 80%; */
     padding: 1rem;
     background: linear-gradient(270deg,rgb(166, 166, 166,0.8),rgb(255, 232, 186,0.8));
     outline: none;
     border-width: 0.1px;
+}
+#title-section{
+    text-align: center;
 }
 #blog-content{
     height: 60vh;
 }
 button{
     width: auto;
-    padding: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 9px;
+    padding-left: 3px;
+    padding-right: 3px;
+    border: none;
+    outline: none;
+    font-size: larger;
+    margin-left: 5rem;
+}
+#btns{
+    text-align: center;
+    margin-top: 2rem;
+    font-size: larger;
+}
+#publish-btn{
+    background:linear-gradient(135deg,lightgreen,lightyellow);
+    margin-left: 2rem;
+}
+#publish-btn:hover{
+    background: linear-gradient(135deg, green,yellow);
+}
+#draft-btn{
+    background:linear-gradient(135deg,lightblue,lightgreen)
+}
+#draft-btn:hover{
+    background: linear-gradient(135deg,rgb(128, 221, 252), green);
 }
