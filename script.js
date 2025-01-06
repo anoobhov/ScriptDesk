@@ -25,8 +25,13 @@ for (let i = 0; i < 70; i++) {
 
 //handling the image inserted
 document.getElementById("imageInput").addEventListener("change", function (event) {
+    event.preventDefault()
     const file = event.target.files[0]; // Get the first selected file
-    const preview = document.getElementById("imagePreview");
+    const imagediv = document.getElementsByClassName('image')
+    const preview = document.createElement("div");
+    preview.id = 'imagePreview'
+    imagediv[0].appendChild(preview)
+    
   
     if (file) {
       const reader = new FileReader(); // FileReader to read the file as a data URL
@@ -38,3 +43,15 @@ document.getElementById("imageInput").addEventListener("change", function (event
       preview.innerHTML = "Thumbnail will appear here"; // Reset preview if no file
     }
   });
+
+
+//notes section
+
+document.getElementById('note_it').addEventListener('click',(event)=>{
+  event.preventDefault()
+  const values = document.getElementById('notes')
+  const note_div = document.createElement('div')
+  note_div.className="noted_notes"
+  note_div.textContent=values.value
+  note_div.appendChild(document.getElementById("wer"))
+})
