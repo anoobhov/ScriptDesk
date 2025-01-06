@@ -46,7 +46,7 @@ form{
 }
 .writing-section{
     font-size: xx-large;
-    /* width: 80%; */
+    width: 80%;
     padding: 1rem;
     background: linear-gradient(270deg,rgba(205, 205, 205, 0.8),rgba(255, 255, 255, 0.8));
     outline: none;
@@ -63,13 +63,32 @@ button{
     padding-top: 5px;
     padding-bottom: 5px;
     border-radius: 9px;
-    padding-left: 3px;
-    padding-right: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
     border: none;
     outline: none;
     font-size: larger;
     margin-left: 2rem;
 }
+
+
+/* Image insertion */
+#imagePreview {
+    margin-top: 20px;
+    width: 100px;
+    height: 100px;
+    border: 2px dashed #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: #f9f9f9;
+  }
+  #imagePreview img {
+    width: 100%;
+    height: auto;
+  }
+
 #btns{
     text-align: center;
     margin-top: 2rem;
@@ -81,14 +100,16 @@ button{
     color: white;
 }
 #publish-btn:hover{
-    background-color: rgb(80, 243, 80);
+    background: rgb(7, 131, 7);
+    border-radius: 0px;
 }
 #draft-btn{
-    background-color: blue;
+    background-color: black;
     color: white;
 }
 #draft-btn:hover{
-    background: linear-gradient(135deg,rgb(128, 221, 252), green);
+    background: rgb(56, 55, 55);
+    border-radius: 0px;
 }
 
 

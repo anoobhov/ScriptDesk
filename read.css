@@ -4,6 +4,7 @@
 }
 body{
     background: linear-gradient(270deg,rgb(207, 206, 206),rgb(254, 240, 214));
+    overflow-x: hidden;
 }
 
 header{
@@ -49,7 +50,7 @@ header{
     margin-top: 1rem;
     transition: transform 0.3s ease;
     /* box-shadow: 0px 0px 0.5px 0.5px rgb(126, 126, 126); */
-    background: linear-gradient(270deg,rgb(207, 206, 206,0.8),rgb(254, 240, 214));;
+    background: linear-gradient(270deg,rgb(207, 206, 206,0.3),rgb(254, 240, 214));;
     border-radius: 5px;
 }
 .card:hover{
