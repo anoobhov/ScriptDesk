@@ -41,7 +41,7 @@ form{
 #main-area{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 0.5fr 2fr 1fr;
+    grid-template-rows: 0.5fr 4fr 1fr;
 }
 .writing-section{
     font-size: xx-large;

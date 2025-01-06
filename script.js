@@ -48,10 +48,25 @@ document.getElementById("imageInput").addEventListener("change", function (event
 //notes section
 
 document.getElementById('note_it').addEventListener('click',(event)=>{
-  event.preventDefault()
-  const values = document.getElementById('notes')
-  const note_div = document.createElement('div')
-  note_div.className="noted_notes"
-  note_div.textContent=values.value
-  note_div.appendChild(document.getElementById("wer"))
+  
 })
+
+
+
+//likes counting
+const button = getElementById('like-btn')
+function incrementLikes(button) {
+  const likeCountSpan = button.nextElementSibling; // Get the span next to the button
+  let currentLikes = parseInt(likeCountSpan.textContent, 10); // Get current like count
+  if (button.classList.contains('liked')) {
+    // If liked, decrement the count and remove 'liked' class
+    likeCountSpan.textContent = currentLikes - 1;
+    button.classList.remove('liked');
+    button.style.backgroundColor='transparent'
+  }
+  else{
+    likeCountSpan.textContent = currentLikes + 1;
+    button.classList.add('liked')
+    button.style.backgroundColor='green'
+  }
+}

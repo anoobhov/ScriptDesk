@@ -92,7 +92,10 @@ header{
 .links:active{
     color: black;
 }
-
+#like-btn{
+    background-color: transparent;
+    border: none;
+}
 
 
 /* Scroll bar */
