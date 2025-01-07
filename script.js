@@ -71,7 +71,7 @@ for (let i = 0; i < 70; i++) {
 //   }
 // }
 
-
+//blog card contents
 const blogs = [
   {
     title: "The Future of Renewable Energy",
@@ -153,7 +153,7 @@ Renewable energy is not just a technological advancement; it is a societal trans
     image:"./images/solar_panel.jpg",
     content:
       "Artificial Intelligence is no longer confined to research labs. From smart assistants to self-driving cars, discover how AI is shaping our daily lives.",
-    categories: ["AI", "Technology"],
+    categories: ["Technology"],
     likes: 34,
   },
   {
@@ -198,10 +198,12 @@ Renewable energy is not just a technological advancement; it is a societal trans
   },
 ];
 
+
+const cards = document.getElementById('cards')
+//creating blog cards
 for(let i = 0;i<blogs.length;i++)
 {
 let test_blog = blogs[i]
-const cards = document.getElementById('cards')
 
 let card = document.createElement('div')
 card.className='card'
@@ -249,5 +251,33 @@ likes.appendChild(lyk_btn)
 
 card.appendChild(likes)
 
+card.addEventListener('click', function () {
+  // Hide cards section
+  cards.style.display = 'none';
+  blogDetail = document.getElementById('blog-detail')
+  // Display detailed view
+  blogDetail.style.display = 'block';
+  blogDetail.innerHTML = `
+    <h1 class="blog-head">${test_blog.title}</h1>
+    <p class="blog-author" >${test_blog.author} -- ${test_blog.date}</p>
+    <p class="blog-content" style="white-space: pre-line;">${test_blog.content}</p>
+  `;
+  document.getElementsByClassName('dot').style.visibility='none'
+});
+
 cards.appendChild(card)
 }
+
+//viewing full blog
+// cards.addEventListener('click',(event)=>{
+//   console.log(event.target)
+// })
+
+// const backButton = document.createElement('button');
+// backButton.textContent = 'Back to All Blogs';
+// backButton.addEventListener('click', function () {
+//   // Hide detailed view and show cards
+//   blogDetail.style.display = 'none';
+//   cards.style.display = 'flex'; // Adjust display to match your layout
+// });
+// blogDetail.appendChild(backButton);

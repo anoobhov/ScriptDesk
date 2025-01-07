@@ -42,7 +42,7 @@ header{
     margin-top: 90px;
 }
 .card{
-    display: inline-block;
+    /* position: relative; */
     padding: 9px;
     max-width: 20.5vw;
     display: flex;
@@ -57,6 +57,7 @@ header{
     transform: scale(1.11);
     box-shadow: 0px 0px 2px 1px rgb(75, 75, 75);
     border-radius: 0px;
+    cursor:pointer;
 }
 .card>h1{
     font-size: 1.3rem;
@@ -95,10 +96,15 @@ header{
 #like-btn{
     background-color: transparent;
     border: none;
+    /* position: absolute;
+    bottom: 0;
+    left: 2rem; */
 }
-#like-btn:hover{
-    cursor:pointer;
-}
+/* .like-count{
+    position: absolute;
+    bottom: 0;
+} */
+
 
 
 /* Scroll bar */
@@ -121,6 +127,17 @@ header{
 
 ::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(135deg,rgb(255, 102, 128),rgb(253, 217, 73));
+}
+
+
+
+
+.blog-head{
+    margin-top: 100px;
+    text-align: center;
+}
+.blog-author{
+    margin-bottom: 3rem;
 }
 
 
