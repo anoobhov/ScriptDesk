@@ -262,7 +262,10 @@ card.addEventListener('click', function () {
     <p class="blog-author" >${test_blog.author} -- ${test_blog.date}</p>
     <p class="blog-content" style="white-space: pre-line;">${test_blog.content}</p>
   `;
-  document.getElementsByClassName('dot').style.visibility='none'
+  let dots = document.getElementsByClassName('dot')
+  for (let i = 0; i < 70; i++) {
+    dots[i].style.visibility='hidden'
+  }
 });
 
 cards.appendChild(card)
