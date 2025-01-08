@@ -80,6 +80,8 @@ const blogs = [
     image:"./images/solar_panel.jpg",
     content:
     `Renewable energy sources, such as solar and wind, are playing an increasingly pivotal role in shaping the future of energy. These sustainable options are not only environmentally friendly but also economically viable as advancements in technology drive significant cost reductions and enhance overall efficiency. Innovations like improved solar panel designs, better energy storage solutions, and smarter grid systems are making renewable energy more accessible and reliable than ever before. This transition marks a critical step toward reducing our dependence on fossil fuels, combating climate change, and fostering a cleaner, greener planet. Join the movement toward a sustainable energy revolution.
+
+
 ### The Rising Importance of Renewable Energy
 The importance of renewable energy cannot be overstated. In an era where climate change poses an existential threat to the planet, transitioning to renewable energy sources is no longer just an option; it is a necessity. Global temperatures are rising, sea levels are climbing, and extreme weather events are becoming more frequent and devastating. The root cause of these alarming trends is the excessive reliance on fossil fuels, which emit large quantities of greenhouse gases into the atmosphere.
 
@@ -260,7 +262,7 @@ card.addEventListener('click', function () {
   blogDetail.innerHTML = `
     <h1 class="blog-head">${test_blog.title}</h1>
     <p class="blog-author" >${test_blog.author} -- ${test_blog.date}</p>
-    <p class="blog-content" style="white-space: pre-line;">${test_blog.content}</p>
+    <p class="blog-content">${test_blog.content}</p>
   `;
   let dots = document.getElementsByClassName('dot')
   for (let i = 0; i < 70; i++) {

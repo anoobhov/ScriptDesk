@@ -139,6 +139,12 @@ header{
 .blog-author{
     margin-bottom: 3rem;
 }
+.blog-content{
+    white-space: pre-line;
+    line-height: 30px;
+    word-spacing: 5px;
+    font-size: 20px;
+}
 
 
 /* animation */
