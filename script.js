@@ -1,17 +1,31 @@
-// for (let i = 0; i < 50; i++) {
-//     const dot = document.createElement('div');
-//     dot.classList.add('dot');
-//     dot.style.left = `${Math.random() * 100}vw`;
-//     dot.style.top = `${Math.random() * 100}vh`;
-//     dot.style.animationDelay = `${Math.random() * 5}s`;
-//     document.body.appendChild(dot);
-//     // let main = document.getElementById('main')
-//     // main.appendChild(dot)
-// }
+document.addEventListener('DOMContentLoaded', () => {
+    const pageId = document.body.id;
 
+    if (pageId === 'indexPage') {
+        background_animation(); // Function specific to index.html
+    } else if (pageId === 'readPage') {
+        read()
+        background_animation();
+    } else if (pageId === 'writePage') {
+      function formatDoc(cmd, value=null) {
+        if(value) {
+          document.execCommand(cmd, false, value);
+        } else {
+          document.execCommand(cmd);
+        }
+      }
+      function addLink() {
+        const url = prompt('Insert url');
+        formatDoc('createLink', url);
+      }
+      text_box()
+      publish_draft()
+      background_animation();
+    }
+});
 // animation
-// function background_animation()
-
+function background_animation()
+{
   for (let i = 0; i < 70; i++) 
   {
     const dot = document.createElement('div');
@@ -25,7 +39,7 @@
     document.body.appendChild(dot);
   }
 
-
+}
 
 //handling the image inserted
 // document.getElementById("imageInput").addEventListener("change", function (event) {
@@ -204,11 +218,11 @@ Renewable energy is not just a technological advancement; it is a societal trans
   },
 ];
 
-// export { blogs };
 
-// function read(){
+function read(){
 const cards = document.getElementById('cards')
 //creating blog cards
+let blogDetail;
 for(let i = 0;i<blogs.length;i++)
 {
 let test_blog = blogs[i]
@@ -270,21 +284,93 @@ card.addEventListener('click', function () {
     <p class="blog-author" >${test_blog.author} -- ${test_blog.date}</p>
     <p class="blog-content">${test_blog.content}</p>
   `;
-  let dots = document.getElementsByClassName('dot')
-  for (let i = 0; i < 70; i++) {
-    dots[i].style.visibility='hidden'
-  }
+  // let dots = document.getElementsByClassName('dot')
+  // for (let i = 0; i < 70; i++) {
+  //   dots[i].style.visibility='hidden'
+  // }
 });
 
 cards.appendChild(card)
+
+}
+// const backButton = document.createElement('button');
+// backButton.textContent = 'Back to All Blogs';
+// backButton.addEventListener('click', function () {
+//   // Hide detailed view and show cards
+//   blogDetail.style.display = 'none';
+//   cards.style.display = 'flex'; // Adjust display to match your layout
+// });
+// blogDetail.appendChild(backButton);
 }
 
 
-const backButton = document.createElement('button');
-backButton.textContent = 'Back to All Blogs';
-backButton.addEventListener('click', function () {
-  // Hide detailed view and show cards
-  blogDetail.style.display = 'none';
-  cards.style.display = 'flex'; // Adjust display to match your layout
-});
-blogDetail.appendChild(backButton);
+//text box
+
+
+
+
+function text_box(){
+	const content = document.getElementById('content');
+content.addEventListener('mouseenter', function () {
+	const a = content.querySelectorAll('a');
+	a.forEach(item=> {
+		item.addEventListener('mouseenter', function () {
+			content.setAttribute('contenteditable', false);
+			item.target = '_blank';
+		})
+		item.addEventListener('mouseleave', function () {
+			content.setAttribute('contenteditable', true);
+		})
+	})
+})
+}
+
+
+function publish_draft(){
+//extracting the content
+document.querySelector('#publish-btn').addEventListener('click',(event)=>{
+  event.preventDefault()
+  const title = document.getElementById('title-section').value
+  const content = document.getElementById('content').innerHTML
+  console.log('button-clicked')
+  // console.log(title)
+  // console.log(content)
+  const author = 'You'
+
+  const today = new Date();
+
+  const year = today.getFullYear();
+  const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  const month = monthNames[today.getMonth()]; 
+  const day = String(today.getDate()).padStart(2, '0');
+
+  const date = `${day} ${month} ${year}`;
+  const image = 'fde'
+  blogs.push({title,author,date,image,content});
+  console.log(blogs)
+})
+
+let drafts = [];
+
+document.querySelector('#draft-btn').addEventListener('click',(event)=>{
+  event.preventDefault()
+  const title = document.getElementById('title-section').value
+  const content = document.getElementById('content').innerHTML
+  console.log('button-clicked')
+  // console.log(title)
+  // console.log(content)
+  const author = 'You'
+
+  const today = new Date();
+
+  const year = today.getFullYear();
+  const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  const month = monthNames[today.getMonth()]; 
+  const day = String(today.getDate()).padStart(2, '0');
+
+  const date = `${day} ${month} ${year}`;
+  const image = 'fde'
+  drafts.push({title,author,date,image,content});
+  console.log(drafts)
+})
+}
