@@ -10,7 +10,10 @@
 // }
 
 // animation
-for (let i = 0; i < 70; i++) {
+// function background_animation()
+
+  for (let i = 0; i < 70; i++) 
+  {
     const dot = document.createElement('div');
     dot.classList.add('dot');
     const docWidth = document.documentElement.scrollWidth;
@@ -20,7 +23,8 @@ for (let i = 0; i < 70; i++) {
     dot.style.top = `${Math.random() * docHeight}px`;
     dot.style.animationDelay = `${Math.random() * 5}s`;
     document.body.appendChild(dot);
-}
+  }
+
 
 
 //handling the image inserted
@@ -72,7 +76,7 @@ for (let i = 0; i < 70; i++) {
 // }
 
 //blog card contents
-const blogs = [
+let blogs = [
   {
     title: "The Future of Renewable Energy",
     author: "Alec Whitten",
@@ -200,7 +204,9 @@ Renewable energy is not just a technological advancement; it is a societal trans
   },
 ];
 
+// export { blogs };
 
+// function read(){
 const cards = document.getElementById('cards')
 //creating blog cards
 for(let i = 0;i<blogs.length;i++)
@@ -273,16 +279,12 @@ card.addEventListener('click', function () {
 cards.appendChild(card)
 }
 
-//viewing full blog
-// cards.addEventListener('click',(event)=>{
-//   console.log(event.target)
-// })
 
-// const backButton = document.createElement('button');
-// backButton.textContent = 'Back to All Blogs';
-// backButton.addEventListener('click', function () {
-//   // Hide detailed view and show cards
-//   blogDetail.style.display = 'none';
-//   cards.style.display = 'flex'; // Adjust display to match your layout
-// });
-// blogDetail.appendChild(backButton);
+const backButton = document.createElement('button');
+backButton.textContent = 'Back to All Blogs';
+backButton.addEventListener('click', function () {
+  // Hide detailed view and show cards
+  blogDetail.style.display = 'none';
+  cards.style.display = 'flex'; // Adjust display to match your layout
+});
+blogDetail.appendChild(backButton);
