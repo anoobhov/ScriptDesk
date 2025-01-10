@@ -207,7 +207,7 @@ document.addEventListener('DOMContentLoaded', () => {
         blogs = JSON.parse(savedBlogs);
         }
         background_animation();
-        read(blogs)
+        displayblogs(blogs)
         
     } else if (pageId === 'writePage') {
       function formatDoc(cmd, value=null) {
@@ -405,8 +405,10 @@ document.addEventListener('DOMContentLoaded', () => {
 // ];
 
 
-function read(blogs){
+function displayblogs(blogs){
+
 const cards = document.getElementById('cards')
+cards.innerHTML=''
 //creating blog cards
 let blogDetail;
 for(let i = 0;i<blogs.length;i++)
@@ -492,6 +494,69 @@ cards.appendChild(card)
 }
 
 
+//sorting blogs 
+//sorting by likes
+function sortBlogsbylikes(order) {
+  if (order === "highestlike") {
+    blogs.sort((a, b) => b.likes - a.likes); // Descending order
+  } else if (order === "lowestlike") {
+    blogs.sort((a, b) => a.likes - b.likes); // Ascending order
+  }
+  displayblogs(blogs);
+}
+
+//sorting by date
+// Function to sort blogs by date
+function parseDate(dateStr) {
+  const months = {
+    "Jan": 0, "Feb": 1, "Mar": 2, "Apr": 3, "May": 4, "Jun": 5,
+    "Jul": 6, "Aug": 7, "Sep": 8, "Oct": 9, "Nov": 10, "Dec": 11
+  };
+
+  const parts = dateStr.split(" ");
+  const day = parseInt(parts[0], 10);
+  const month = months[parts[1]];  
+  const year = parseInt(parts[2], 10); 
+
+  return new Date(year, month, day); 
+}
+
+// Function to sort blogs by date
+function sortBlogsByDate(order) {
+  if (order === "latest") {
+    blogs.sort((a, b) => {
+      const dateA = parseDate(a.date);
+      const dateB = parseDate(b.date);
+      return dateB - dateA; // Latest to earliest
+    });
+  } else if (order === "oldest") {
+    blogs.sort((a, b) => {
+      const dateA = parseDate(a.date);
+      const dateB = parseDate(b.date);
+      return dateA - dateB; // Earliest to latest
+    });
+  }
+
+  displayblogs(blogs);
+}
+
+
+// Event listener for dropdown
+document.getElementById("date-fltr").addEventListener("change", (event) => {
+  const order = event.target.value;
+  const likesDropdown = document.getElementById("like-fltr");
+  likesDropdown.value = "";
+  sortBlogsByDate(order)
+});
+
+//adding event listener
+document.getElementById("like-fltr").addEventListener("change", (event) => {
+  const order = event.target.value;
+  const datesDropdown = document.getElementById("date-fltr");
+  datesDropdown.value=''
+  sortBlogsbylikes(order);
+});
+
 //text box
 
 
@@ -525,14 +590,7 @@ document.querySelector('#publish-btn').addEventListener('click',(event)=>{
   // console.log(content)
   const author = 'You'
 
-  const today = new Date();
-
-  const year = today.getFullYear();
-  const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-  const month = monthNames[today.getMonth()]; 
-  const day = String(today.getDate()).padStart(2, '0');
-
-  const date = `${day} ${month} ${year}`;
+  const date = date_filler();
   const image = 'https://www.shutterstock.com/image-photo/calm-weather-on-sea-ocean-600nw-2212935531.jpg'
   blogs.push({title,author,date,image,content});
   localStorage.setItem('blogs', JSON.stringify(blogs));
@@ -543,13 +601,11 @@ let drafts = [];
 function date_filler()
 {
   const today = new Date();
-
   const year = today.getFullYear();
   const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
   const month = monthNames[today.getMonth()]; 
   const day = String(today.getDate()).padStart(2, '0');
   return `${day} ${month} ${year}`
-
 }
 
 document.querySelector('#draft-btn').addEventListener('click',(event)=>{
@@ -560,8 +616,7 @@ document.querySelector('#draft-btn').addEventListener('click',(event)=>{
   // console.log(title)
   // console.log(content)
   const author = 'You'
-
-  const date = date_filler
+  const date = date_filler()
   const image = 'fde'
   drafts.push({title,author,date,image,content});
   console.log(drafts)
