@@ -126,7 +126,7 @@ Renewable energy is not just a technological advancement; it is a societal trans
   },
 ];
 
-const texts = ["Experiences", "Ideas", "Stories", "Dreams", "Thoughts", "Memories"];
+const texts = ["<Experiences>", "<Ideas>", "<Stories>", "<Dreams>", "<Thoughts>", "<Memories>"];
 const typingSpeed = 150;
 const erasingSpeed = 100;
 const delayBetweenWords = 1500; // Delay between words
