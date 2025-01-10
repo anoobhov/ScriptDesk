@@ -57,18 +57,7 @@ form{
     border: none;
     border-radius: 8px;
 }
-.button{
-    width: auto;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    border-radius: 9px;
-    padding-left: 10px;
-    padding-right: 10px;
-    border: none;
-    outline: none;
-    font-size: larger;
-    margin-left: 2rem;
-}
+
 
 li {
 	margin-left: 16px;
@@ -187,11 +176,22 @@ a {
     height: auto;
 }
 
-
-
-
-
-
+.button{
+    color: white;
+    width: auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 9px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border:none;
+    outline: none;
+    font-size: larger;
+    margin-left: 2rem;
+}
+.button:active{
+    transform: scale(0.9);
+}
 #btns{
     text-align: center;
     margin-top: 2rem;
@@ -200,19 +200,15 @@ a {
 #publish-btn{
     background-color: rgb(6, 199, 6);
     margin-left: 2rem;
-    color: white;
 }
 #publish-btn:hover{
     background: rgb(7, 131, 7);
-    border-radius: 0px;
 }
 #draft-btn{
     background-color: black;
-    color: white;
 }
 #draft-btn:hover{
     background: rgb(56, 55, 55);
-    border-radius: 0px;
 }
 
 

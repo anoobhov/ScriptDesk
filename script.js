@@ -126,6 +126,8 @@ Renewable energy is not just a technological advancement; it is a societal trans
   },
 ];
 
+//typing animation
+function animation(){
 const texts = ["<Experiences>", "<Ideas>", "<Stories>", "<Dreams>", "<Thoughts>", "<Memories>"];
 const typingSpeed = 150;
 const erasingSpeed = 100;
@@ -169,14 +171,34 @@ function typeAndErase() {
 document.addEventListener("DOMContentLoaded", () => {
   setTimeout(typeAndErase, delayBeforeNextWord);
 });
+typeAndErase()
+}
 
+// background_animation
+function background_animation()
+{
+  for (let i = 0; i < 70; i++) 
+  {
+    const dot = document.createElement('div');
+    dot.classList.add('dot');
+    const docWidth = document.documentElement.scrollWidth;
+    const docHeight = document.documentElement.scrollHeight;
+    
+    dot.style.left = `${Math.random() * docWidth}px`;
+    dot.style.top = `${Math.random() * docHeight}px`;
+    dot.style.animationDelay = `${Math.random() * 5}s`;
+    document.body.appendChild(dot);
+  }
 
+}
+
+//getting the pages and calling their respective functions
 document.addEventListener('DOMContentLoaded', () => {
     const pageId = document.body.id;
 
     if (pageId === 'indexPage') {
         background_animation(); // Function specific to index.html
-        typeAndErase()
+        animation()
         
     } else if (pageId === 'readPage') {
         
@@ -204,23 +226,6 @@ document.addEventListener('DOMContentLoaded', () => {
       //background_animation();
     }
 });
-// animation
-function background_animation()
-{
-  for (let i = 0; i < 70; i++) 
-  {
-    const dot = document.createElement('div');
-    dot.classList.add('dot');
-    const docWidth = document.documentElement.scrollWidth;
-    const docHeight = document.documentElement.scrollHeight;
-    
-    dot.style.left = `${Math.random() * docWidth}px`;
-    dot.style.top = `${Math.random() * docHeight}px`;
-    dot.style.animationDelay = `${Math.random() * 5}s`;
-    document.body.appendChild(dot);
-  }
-
-}
 
 //handling the image inserted
 // document.getElementById("imageInput").addEventListener("change", function (event) {
@@ -457,18 +462,20 @@ card.appendChild(likes)
 card.addEventListener('click', function () {
   // Hide cards section
   cards.style.display = 'none';
+  document.getElementById('filter').style.display='none'
   blogDetail = document.getElementById('blog-detail')
   // Display detailed view
   blogDetail.style.display = 'block';
   blogDetail.innerHTML = `
-    <h1 class="blog-head">${test_blog.title}</h1>
+    <h1 class="blog-head">&lt;${test_blog.title}&gt;</h1>
     <p class="blog-author" >${test_blog.author} -- ${test_blog.date}</p>
+    <hr>
     <p class="blog-content">${test_blog.content}</p>
   `;
-  // let dots = document.getElementsByClassName('dot')
-  // for (let i = 0; i < 70; i++) {
-  //   dots[i].style.visibility='hidden'
-  // }
+  let dots = document.getElementsByClassName('dot')
+  for (let i = 0; i < 70; i++) {
+    dots[i].style.visibility='hidden'
+  }
 });
 
 cards.appendChild(card)
