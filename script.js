@@ -126,6 +126,49 @@ Renewable energy is not just a technological advancement; it is a societal trans
   },
 ];
 
+const texts = ["Experiences", "Ideas", "Stories", "Dreams", "Thoughts", "Memories"];
+const typingSpeed = 150;
+const erasingSpeed = 100;
+const delayBetweenWords = 1500; // Delay between words
+const delayBeforeNextWord = 500;
+let textIndex = 0;
+let charIndex = 0;
+let isErasing = false;
+
+const typingText = document.getElementById("typingText");
+
+function typeAndErase() {
+  // Typing mode
+  if (!isErasing) {
+    if (charIndex < texts[textIndex].length) {
+      typingText.textContent += texts[textIndex].charAt(charIndex);
+      charIndex++;
+      setTimeout(typeAndErase, typingSpeed);
+    } else {
+      // When the word is fully typed, wait and start erasing
+      isErasing = true;
+      setTimeout(typeAndErase, delayBetweenWords);
+    }
+  } 
+  // Erasing mode
+  else {
+    if (charIndex > 0) {
+      typingText.textContent = texts[textIndex].substring(0, charIndex - 1);
+      charIndex--;
+      setTimeout(typeAndErase, erasingSpeed);
+    } else {
+      // Move to the next word and start typing again
+      isErasing = false;
+      textIndex = (textIndex + 1) % texts.length; // Loop through the words
+      setTimeout(typeAndErase, delayBeforeNextWord);
+    }
+  }
+}
+
+// Start the typing effect
+document.addEventListener("DOMContentLoaded", () => {
+  setTimeout(typeAndErase, delayBeforeNextWord);
+});
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -133,13 +176,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (pageId === 'indexPage') {
         background_animation(); // Function specific to index.html
+        typeAndErase()
+        
     } else if (pageId === 'readPage') {
-        read()
+        
         let savedBlogs = localStorage.getItem('blogs');
         if (savedBlogs) {
         blogs = JSON.parse(savedBlogs);
         }
         background_animation();
+        read(blogs)
+        
     } else if (pageId === 'writePage') {
       function formatDoc(cmd, value=null) {
         if(value) {
@@ -154,7 +201,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       text_box()
       publish_draft()
-      background_animation();
+      //background_animation();
     }
 });
 // animation
@@ -353,7 +400,7 @@ function background_animation()
 // ];
 
 
-function read(){
+function read(blogs){
 const cards = document.getElementById('cards')
 //creating blog cards
 let blogDetail;
@@ -479,13 +526,24 @@ document.querySelector('#publish-btn').addEventListener('click',(event)=>{
   const day = String(today.getDate()).padStart(2, '0');
 
   const date = `${day} ${month} ${year}`;
-  const image = 'fde'
+  const image = 'https://www.shutterstock.com/image-photo/calm-weather-on-sea-ocean-600nw-2212935531.jpg'
   blogs.push({title,author,date,image,content});
   localStorage.setItem('blogs', JSON.stringify(blogs));
   console.log(blogs)
 })
 
 let drafts = [];
+function date_filler()
+{
+  const today = new Date();
+
+  const year = today.getFullYear();
+  const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  const month = monthNames[today.getMonth()]; 
+  const day = String(today.getDate()).padStart(2, '0');
+  return `${day} ${month} ${year}`
+
+}
 
 document.querySelector('#draft-btn').addEventListener('click',(event)=>{
   event.preventDefault()
@@ -496,14 +554,7 @@ document.querySelector('#draft-btn').addEventListener('click',(event)=>{
   // console.log(content)
   const author = 'You'
 
-  const today = new Date();
-
-  const year = today.getFullYear();
-  const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-  const month = monthNames[today.getMonth()]; 
-  const day = String(today.getDate()).padStart(2, '0');
-
-  const date = `${day} ${month} ${year}`;
+  const date = date_filler
   const image = 'fde'
   drafts.push({title,author,date,image,content});
   console.log(drafts)
