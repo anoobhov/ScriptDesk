@@ -91,7 +91,7 @@ Renewable energy is not just a technological advancement; it is a societal trans
     image:"./images/solar_panel.jpg",
     content:
       "Minimalism is not just about owning less; it's about creating more space for what truly matters. Learn how to declutter your life and find true happiness.",
-    categories: ["Lifestyle", "Self-Help"],
+    categories: ["Lifestyle"],
     likes: 32,
   },
   {
@@ -506,7 +506,7 @@ function sortBlogsbylikes(order) {
 }
 
 //sorting by date
-// Function to sort blogs by date
+// Function to change date format
 function parseDate(dateStr) {
   const months = {
     "Jan": 0, "Feb": 1, "Mar": 2, "Apr": 3, "May": 4, "Jun": 5,
@@ -540,27 +540,43 @@ function sortBlogsByDate(order) {
   displayblogs(blogs);
 }
 
-
-// Event listener for dropdown
+//Function to sort by categories
+// function filterBlogsByCategory(selectedCategory) {
+//   if (selectedCategory === "") {
+//     displayblogs(blogs);
+//   } else {
+//     const filteredBlogs = blogs.filter((blog) =>
+//       blog.categories.includes(selectedCategory)
+//     );
+//     displayblogs(filteredBlogs);
+//   }
+// }
+// Event listener for dropdown for date
 document.getElementById("date-fltr").addEventListener("change", (event) => {
   const order = event.target.value;
   const likesDropdown = document.getElementById("like-fltr");
   likesDropdown.value = "";
+  const categorydropdown = document.getElementById("catergory-fltr")
+  categorydropdown.value=""
   sortBlogsByDate(order)
 });
 
-//adding event listener
+//adding event listener for like
 document.getElementById("like-fltr").addEventListener("change", (event) => {
   const order = event.target.value;
   const datesDropdown = document.getElementById("date-fltr");
   datesDropdown.value=''
+  const categorydropdown = document.getElementById("catergory-fltr")
+  categorydropdown.value=""
   sortBlogsbylikes(order);
 });
 
+//event listner for category
+document.getElementById("catergory-fltr").addEventListener("change", (event) => {
+  const selectedCategory = event.target.value;
+  filterBlogsByCategory(selectedCategory);
+});
 //text box
-
-
-
 
 function text_box(){
 	const content = document.getElementById('content');
@@ -589,12 +605,15 @@ document.querySelector('#publish-btn').addEventListener('click',(event)=>{
   // console.log(title)
   // console.log(content)
   const author = 'You'
-
+  const categories = ['Lifestyle']
+  let likes = 0
   const date = date_filler();
   const image = 'https://www.shutterstock.com/image-photo/calm-weather-on-sea-ocean-600nw-2212935531.jpg'
-  blogs.push({title,author,date,image,content});
+  blogs.push({title,author,date,image,content,categories,likes});
   localStorage.setItem('blogs', JSON.stringify(blogs));
-  console.log(blogs)
+  window.location.href = 'read.html';
+  // console.log(blogs)
+  // displayblogs(blogs)
 })
 
 let drafts = [];
