@@ -192,6 +192,8 @@ function background_animation()
 
 }
 
+
+
 //getting the pages and calling their respective functions
 document.addEventListener('DOMContentLoaded', () => {
     const pageId = document.body.id;
@@ -208,19 +210,20 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         background_animation();
         displayblogs(blogs)
+        event_listners_filtering()
         
     } else if (pageId === 'writePage') {
-      function formatDoc(cmd, value=null) {
-        if(value) {
-          document.execCommand(cmd, false, value);
-        } else {
-          document.execCommand(cmd);
-        }
-      }
-      function addLink() {
-        const url = prompt('Insert url');
-        formatDoc('createLink', url);
-      }
+      // function formatDoc(cmd, value=null) {
+      //   if(value) {
+      //     document.execCommand(cmd, false, value);
+      //   } else {
+      //     document.execCommand(cmd);
+      //   }
+      // }
+      // function addLink() {
+      //   const url = prompt('Insert url');
+      //   formatDoc('createLink', url);
+      // }
       text_box()
       publish_draft()
       //background_animation();
@@ -552,6 +555,7 @@ function sortBlogsByDate(order) {
 //   }
 // }
 // Event listener for dropdown for date
+function event_listners_filtering(){
 document.getElementById("date-fltr").addEventListener("change", (event) => {
   const order = event.target.value;
   const likesDropdown = document.getElementById("like-fltr");
@@ -576,6 +580,7 @@ document.getElementById("catergory-fltr").addEventListener("change", (event) => 
   const selectedCategory = event.target.value;
   filterBlogsByCategory(selectedCategory);
 });
+}
 //text box
 
 function text_box(){
@@ -591,6 +596,13 @@ content.addEventListener('mouseenter', function () {
 			content.setAttribute('contenteditable', true);
 		})
 	})
+  window.formatDoc= function(cmd, value=null) {
+    if(value) {
+      document.execCommand(cmd, false, value);
+    } else {
+      document.execCommand(cmd);
+    }
+  }
 })
 }
 
@@ -604,11 +616,18 @@ document.querySelector('#publish-btn').addEventListener('click',(event)=>{
   console.log('button-clicked')
   // console.log(title)
   // console.log(content)
+  const warning = document.getElementById('warning-message');
   const author = 'You'
   const categories = ['Lifestyle']
   let likes = 0
   const date = date_filler();
   const image = 'https://www.shutterstock.com/image-photo/calm-weather-on-sea-ocean-600nw-2212935531.jpg'
+  if (!title || !content) {
+    warning.textContent = 'Please fill out all fields before publishing.';
+    warning.style.color = 'red';
+    return;
+  }
+  warning.textContent = '';
   blogs.push({title,author,date,image,content,categories,likes});
   localStorage.setItem('blogs', JSON.stringify(blogs));
   window.location.href = 'read.html';

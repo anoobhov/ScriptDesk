@@ -16,7 +16,7 @@
         <a href="" class=" buttons">Saved-Drafts</a>
         <hr>
     </header>
-    <form action="">
+    <!-- <form action=""> -->
 
         <div id="main-area">
             <input type="text" value="" placeholder="&lt;Title> &lt;/Box>" class="writing-section" id="title-section">
@@ -57,27 +57,42 @@
                 </div>
                 <div id="content"  contenteditable="true"></div>
 
-
-            <!-- <div id="wer">
-                Notes<input type="text" id="notes">
-                <button id="note_it">Note it !</button>
-            </div> -->
-
             <!-- Will be created after the image is uploaded -->
             <!-- <div id="imagePreview">Thumbnail Peek-In</div> -->
         </div>
-        
+        <span id="categories">Categories:~
+            <select name="" id="catergory-fltr" class="fltr">
+                <option value="" disabled selected>Select</option>
+                <option value="Design">Design</option>
+                <option value="Technology">Technology</option>
+                <option value="Inclusion">Inclusion</option>
+                <option value="Lifestyle">Lifestyle</option>
+                <option value="Health">Health</option>
+                <option value="Energy">Energy</option>
+                <option value="Finance">Finance</option>
+                <option value="Sustainability">Sustainability</option>
+                <option value="Fashion">Fashion</option>
+                
+            </select>
+        </span>
         <div class="image">
             <p>Thumbnail for the Blog</p>
             <input type="file" id="imageInput" accept="image/*">
         </div>
+        <p id="warning-message"></p>
         <div id="btns">
             <button  class= "button"id="publish-btn">&lt;Publish&gt;</button>
             <button class= "button"id="draft-btn">&lt;Save as Draft&gt;</button>
         </div>
        
-    </form>
-    <!-- <script type="module" src="./write.js"></script> -->
+    <!-- </form> -->
+    <div class="note">
+    <span class="notes-section">
+        Notes<input type="text" id="notes">
+        <button id="note_it">Note it !</button>
+    </span>
+</div>
+    <!-- <script src="./write.js"></script> -->
     <script src="./script.js"></script>    
 </body>
 </html>

@@ -18,21 +18,24 @@ function addLink() {
 
 
 
-function text_box(){
-	const content = document.getElementById('content');
-content.addEventListener('mouseenter', function () {
+
+const content = document.getElementById('content');
+content.addEventListener('mouseenter', function (event) {
+	event.preventDefault()
 	const a = content.querySelectorAll('a');
 	a.forEach(item=> {
-		item.addEventListener('mouseenter', function () {
+		item.addEventListener('mouseenter', function (event) {
+			event.preventDefault()
 			content.setAttribute('contenteditable', false);
 			item.target = '_blank';
 		})
-		item.addEventListener('mouseleave', function () {
+		item.addEventListener('mouseleave', function (event) {
+			event.preventDefault()
 			content.setAttribute('contenteditable', true);
 		})
 	})
 })
-}
+
 
 
 
@@ -58,7 +61,7 @@ content.addEventListener('mouseenter', function () {
 //     }
 //   });
 
-function publish_draft(){
+
 //extracting the content
 document.querySelector('#publish-btn').addEventListener('click',(event)=>{
 	event.preventDefault()
@@ -105,4 +108,3 @@ document.querySelector('#draft-btn').addEventListener('click',(event)=>{
 	drafts.push({title,author,date,image,content});
 	console.log(drafts)
 })
-}
