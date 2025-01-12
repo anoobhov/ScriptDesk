@@ -431,11 +431,11 @@ author_date.textContent=`${test_blog.author} -- ${test_blog.date}`
 card.appendChild(author_date)
 
 let heading = document.createElement('h1')
-heading.textContent=test_blog.title
+heading.innerHTML=test_blog.title
 card.appendChild(heading)
 
 let content = document.createElement('p')
-content.textContent=test_blog.content
+content.innerHTML=test_blog.content
 card.appendChild(content)
 
 let category = document.createElement('div')
@@ -667,13 +667,16 @@ function notes(){
   noteit_btn.addEventListener('click',()=>{
   const  notes_data = document.getElementById('notes').value
     // console.log(notes)
-  const notes = document.createElement('div')  
+    const notes = document.createElement('div')
+    const delete_btn = document.createElement('span')
+  if(notes_data!=""){
+    
   notes.className='noting'
   notes.textContent=notes_data
-
-  const delete_btn = document.createElement('span')
   delete_btn.textContent='Delete'
   notes.appendChild(delete_btn)
+  }
+  
   notes_section = document.getElementById('notes-section')
   notes_section.appendChild(notes)
   document.getElementById('notes').value=""
