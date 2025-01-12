@@ -5,15 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ScriptDesk</title>
     <link rel="icon" type="image/png" href="./images/logo.png">
+    <link rel="stylesheet" href="./global.css">
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="./write.css">
 </head>
 <body id="writePage">
     <header>
-        <!-- <h1>All Blogs</h1> -->
-        <a href="./index.html" class=" buttons">Home</a>
-        <a href="./read.html" class=" buttons">Read</a>
-        <a href="./drafts.html" class=" buttons">Saved-Drafts</a>
+        <div id="navbar">
+            <div id="logo">&lt;ScriptDesk&gt;</div>
+            <nav>
+            <a href="./index.html" class="btn">Home</a>
+            <a href="./read.html" class="btn">Read</a>
+            <a href="./drafts.html" class="btn">Saved-Drafts</a>
+        </nav>
+        </div>
         <hr>
     </header>
     <!-- <form action=""> -->
@@ -80,7 +85,7 @@
             <input type="file" id="imageInput" accept="image/*">
         </div>
         <p id="warning-message"></p>
-        <div id="btns">
+        <div id="pub-dft-btns">
             <button  class= "button"id="publish-btn">&lt;Publish&gt;</button>
             <button class= "button"id="draft-btn">&lt;Save as Draft&gt;</button>
         </div>
@@ -98,7 +103,6 @@
     </span>
 
 </div>
-    <!-- <script src="./write.js"></script> -->
     <script src="./script.js"></script>    
 </body>
 </html>
