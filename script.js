@@ -586,6 +586,17 @@ document.getElementById("catergory-fltr").addEventListener("change", (event) => 
 
 function text_box(){
 	const content = document.getElementById('content');
+  
+
+
+    content.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+            event.preventDefault(); // Prevent default behavior
+            document.execCommand('insertHTML', false, '<br>'); // Insert line break
+        }
+    });
+
+
 content.addEventListener('mouseenter', function () {
 	const a = content.querySelectorAll('a');
 	a.forEach(item=> {
@@ -614,6 +625,7 @@ document.querySelector('#publish-btn').addEventListener('click',(event)=>{
   event.preventDefault()
   const title = document.getElementById('title-section').value
   const content = document.getElementById('content').innerHTML
+  // console.log(content)
   // console.log('button-clicked')
   // console.log(title)
   // console.log(content)
