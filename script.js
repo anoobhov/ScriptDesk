@@ -226,6 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // }
       text_box()
       publish_draft()
+      notes()
       //background_animation();
     }
 });
@@ -613,7 +614,7 @@ document.querySelector('#publish-btn').addEventListener('click',(event)=>{
   event.preventDefault()
   const title = document.getElementById('title-section').value
   const content = document.getElementById('content').innerHTML
-  console.log('button-clicked')
+  // console.log('button-clicked')
   // console.log(title)
   // console.log(content)
   const warning = document.getElementById('warning-message');
@@ -659,4 +660,25 @@ document.querySelector('#draft-btn').addEventListener('click',(event)=>{
   drafts.push({title,author,date,image,content});
   console.log(drafts)
 })
+}
+
+function notes(){
+  const noteit_btn = document.getElementById('note_it')
+  noteit_btn.addEventListener('click',()=>{
+  const  notes_data = document.getElementById('notes').value
+    // console.log(notes)
+  const notes = document.createElement('div')  
+  notes.className='noting'
+  notes.textContent=notes_data
+
+  const delete_btn = document.createElement('span')
+  delete_btn.textContent='Delete'
+  notes.appendChild(delete_btn)
+  notes_section = document.getElementById('notes-section')
+  notes_section.appendChild(notes)
+  document.getElementById('notes').value=""
+  delete_btn.addEventListener('click',()=>{
+    notes.remove()
+  })
+  })
 }

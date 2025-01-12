@@ -5,7 +5,6 @@
 }
 body{
     background: linear-gradient(270deg,rgb(207, 206, 206),rgb(254, 240, 214));
-
 }
 
 header{
@@ -37,7 +36,6 @@ header{
 }
 
 #main-area{
-    margin-top: 150px;
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -207,7 +205,45 @@ a {
     background: rgb(56, 55, 55);
 }
 
+
+#dividing{
+    margin-top: 150px;
+    display: flex;
+    justify-content: space-between;
+}
 /* Notes section */
+#notes-section{
+    padding-right: 2rem;
+}
+.text-prt-notes{
+    font-size: larger;
+    margin-left: 1rem;
+}
+#notes,#note_it{
+    font-size: larger;
+    padding: 0.5rem;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    
+}
+#note_it:hover{
+    background:linear-gradient(270deg,rgb(98, 98, 98),rgb(254, 240, 214)) ;
+}
+#note_it:active{
+    transform: scale(0.9);
+}
+.noting{
+    width: auto;
+    background-color: red;
+    margin-top: 1rem;
+    border-radius: 15px;
+    padding: 10px;
+}
+.noting>span{
+    float: right;
+    cursor: pointer;
+}
 
 
 /* Scroll bar */

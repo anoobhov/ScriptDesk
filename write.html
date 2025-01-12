@@ -17,8 +17,8 @@
         <hr>
     </header>
     <!-- <form action=""> -->
-
-        <div id="main-area">
+<div id="dividing">
+    <div id="main-area">
             <input type="text" value="" placeholder="&lt;Title> &lt;/Box>" class="writing-section" id="title-section">
 
             <div class="container">
@@ -61,7 +61,7 @@
             <!-- <div id="imagePreview">Thumbnail Peek-In</div> -->
         </div>
         <span id="categories">Categories:~
-            <select name="" id="catergory-fltr" class="fltr">
+            <select name="" id="catergory-input" class="fltr">
                 <option value="" disabled selected>Select</option>
                 <option value="Design">Design</option>
                 <option value="Technology">Technology</option>
@@ -84,13 +84,19 @@
             <button  class= "button"id="publish-btn">&lt;Publish&gt;</button>
             <button class= "button"id="draft-btn">&lt;Save as Draft&gt;</button>
         </div>
-       
+    </div>   
     <!-- </form> -->
-    <div class="note">
-    <span class="notes-section">
-        Notes<input type="text" id="notes">
+
+    <span id="notes-section">
+        <div class="text-prt-notes">Notes</div>
+        <input type="text" id="notes">
         <button id="note_it">Note it !</button>
+        <!-- <div class="noting">
+            Brain-Drain
+            <span>Delete</span>
+        </div> -->
     </span>
+
 </div>
     <!-- <script src="./write.js"></script> -->
     <script src="./script.js"></script>    

@@ -40,6 +40,9 @@ content.addEventListener('mouseenter', function (event) {
 
 
 
+
+
+
 //handling the image inserted
 // document.getElementById("imageInput").addEventListener("change", function (event) {
 //     event.preventDefault()
@@ -108,3 +111,20 @@ document.querySelector('#draft-btn').addEventListener('click',(event)=>{
 	drafts.push({title,author,date,image,content});
 	console.log(drafts)
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
