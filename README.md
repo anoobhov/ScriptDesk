@@ -1,6 +1,6 @@
 # ScriptDesk
 
-**ScriptDesk** is a blog website designed specifically for writers. It provides a platform where users can write and read blogs, and filter them based on likes, categories, and upload dates. Built with simplicity and functionality in mind, ScriptDesk empowers writers to share their thoughts and readers to engage with content effortlessly.
+**ScriptDesk** is a blog website designed specifically for writers. It provides a platform where users can write and read blogs, filter them and even save blogs as drafts instead of publishing for future enhancements. Writers can also add personal notes to brainstorm and organize their ideas effectively.
 
 ---
 
@@ -12,6 +12,8 @@
   - Number of likes
   - Categories
   - Upload date
+- 💾 **Save Drafts**: Writers can save their blogs as drafts and return to complete them later.
+- 📝 **Add Notes**: A dedicated space for writers to brainstorm and jot down ideas.
 - 🎨 **Clean UI**: Built with a focus on aesthetics and usability.
 
 ---
@@ -30,3 +32,10 @@
    ```bash
    git clone https://github.com/your-username/scriptdesk.git
    cd scriptdesk
+
+
+## Future Improvements
+- Add user authentication for personalized experiences.
+- Implement a database to store blogs, drafts, notes, and user details.
+- Create a backend using a framework like Node.js for scalability.
+- Enable sharing blogs via social media or email.
