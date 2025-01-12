@@ -587,14 +587,36 @@ document.getElementById("catergory-fltr").addEventListener("change", (event) => 
 function text_box(){
 	const content = document.getElementById('content');
   
-
-
     content.addEventListener('keydown', function(event) {
-        if (event.key === 'Enter') {
-            event.preventDefault(); // Prevent default behavior
-            document.execCommand('insertHTML', false, '<br>'); // Insert line break
+      if (event.key === 'Enter') {
+        event.preventDefault(); // Prevent default behavior of creating block elements
+        const selection = window.getSelection();
+        const range = selection.getRangeAt(0);
+
+        // Insert a <br> at the caret position
+        const br = document.createElement('br');
+        range.insertNode(br);
+
+        // Move the caret after the <br>
+        range.setStartAfter(br);
+        range.setEndAfter(br);
+        selection.removeAllRanges();
+        selection.addRange(range);
+
+        // Ensure the contenteditable div is not empty after <br>
+        if (editableDiv.innerHTML === '<br>' || editableDiv.innerHTML === '') {
+            editableDiv.innerHTML = '<br><br>';
+            range.setStartAfter(editableDiv.firstChild);
+            range.setEndAfter(editableDiv.firstChild);
+            selection.removeAllRanges();
+            selection.addRange(range);
         }
-    });
+    }
+});
+
+
+
+
 
 
 content.addEventListener('mouseenter', function () {
