@@ -125,7 +125,18 @@ Renewable energy is not just a technological advancement; it is a societal trans
     likes: 342,
   },
 ];
-
+let drafts = [
+  {
+    title: "Minimalist Living: A Lifestyle Revolution",
+    author: "Emily Johnson",
+    date: "28 Feb 2024",
+    image:"./images/solar_panel.jpg",
+    content:
+      "Minimalism is not just about owning less; it's about creating more space for what truly matters. Learn how to declutter your life and find true happiness.",
+    categories: ["Lifestyle"],
+    likes: 212,
+  },
+];
 //typing animation
 function animation(){
 const texts = ["<Experiences>", "<Ideas>", "<Stories>", "<Dreams>", "<Thoughts>", "<Memories>"];
@@ -202,7 +213,8 @@ document.addEventListener('DOMContentLoaded', () => {
         background_animation(); // Function specific to index.html
         animation()
         
-    } else if (pageId === 'readPage') {
+    } 
+    else if (pageId === 'readPage') {
         
         let savedBlogs = localStorage.getItem('blogs');
         if (savedBlogs) {
@@ -212,22 +224,18 @@ document.addEventListener('DOMContentLoaded', () => {
         displayblogs(blogs)
         event_listners_filtering()
         
-    } else if (pageId === 'writePage') {
-      // function formatDoc(cmd, value=null) {
-      //   if(value) {
-      //     document.execCommand(cmd, false, value);
-      //   } else {
-      //     document.execCommand(cmd);
-      //   }
-      // }
-      // function addLink() {
-      //   const url = prompt('Insert url');
-      //   formatDoc('createLink', url);
-      // }
+    } 
+    else if (pageId === 'writePage') {
+      
       text_box()
       publish_draft()
       notes()
-      //background_animation();
+    
+    }
+    else if (pageId === 'draftpage') {
+      
+      displaydrafts(drafts)
+    
     }
 });
 
@@ -497,6 +505,76 @@ cards.appendChild(card)
 // blogDetail.appendChild(backButton);
 }
 
+function displaydrafts(drafts){
+
+  const cards = document.getElementById('cards')
+  cards.innerHTML=''
+  //creating blog cards
+  let blogDetail;
+  for(let i = 0;i<drafts.length;i++)
+  {
+  let test_blog = drafts[i]
+  
+  let card = document.createElement('div')
+  card.className='card'
+  
+  let img = document.createElement('img')
+  img.src=test_blog.image
+  card.appendChild(img)
+  
+  let author_date = document.createElement('p')
+  author_date.textContent=`${test_blog.author} -- ${test_blog.date}`
+  card.appendChild(author_date)
+  
+  let heading = document.createElement('h1')
+  heading.innerHTML=test_blog.title
+  card.appendChild(heading)
+  
+  let content = document.createElement('p')
+  content.innerHTML=test_blog.content
+  card.appendChild(content)
+  
+  let category = document.createElement('div')
+  category.className='category'
+  for(let j=0;j<test_blog['categories'].length;j++)
+  {
+  let categories = document.createElement('a')
+  categories.className="categories links"
+  
+    categories.textContent=test_blog['categories'][j]
+    category.appendChild(categories)
+    
+  }
+  card.appendChild(category)
+  let edit_del = document.createElement('div')
+  edit_del.id="edit_del"
+  let edit = document.createElement('span')
+  edit.id='edit'
+  edit.textContent='Edit'
+  edit_del.appendChild(edit)
+  let del = document.createElement('span')
+  del.id='del'
+  del.textContent='Delete'
+  edit_del.appendChild(del)
+
+  card.appendChild(edit_del)
+  
+  edit_del.addEventListener('click',(event)=>{
+    // console.log(event.target.id)
+    if(event.target.id==='edit')
+    {
+
+    }
+    else if(event.target.id==='del'){
+      card.remove()
+    }
+  })
+  
+  cards.appendChild(card)
+  
+  }
+  }
+
 
 //sorting blogs 
 //sorting by likes
@@ -670,7 +748,7 @@ document.querySelector('#publish-btn').addEventListener('click',(event)=>{
   // displayblogs(blogs)
 })
 
-let drafts = [];
+
 function date_filler()
 {
   const today = new Date();

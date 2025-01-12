@@ -87,10 +87,9 @@ header{
     border-radius: 5px;
 }
 .card:hover{
-    transform: scale(1.09);
+    transform: scale(1.01);
     box-shadow: 0px 0px 2px 1px rgb(75, 75, 75);
     border-radius: 0px;
-    cursor:pointer;
 }
 .card>h1{
     font-size: 1.3rem;
@@ -99,8 +98,7 @@ header{
     text-overflow: ellipsis;
 }
 .card>img{
-    width: 20vw;
-    height: 20vh;
+    max-width: 20vw;
 }
 /* stylelint-disable-next-line property-no-vendor-prefix */
 .card>p{
@@ -131,19 +129,32 @@ header{
 .links:active{
     color: black;
 }
-#like-btn{
-    background-color: transparent;
+
+
+#edit,#del{
+    padding-left: 0.4rem;
+    padding-right: 0.4rem;
+    border-radius: 5px;
+    font-size: large;
     border: none;
-    /* position: absolute;
-    bottom: 0;
-    left: 2rem; */
 }
-/* .like-count{
-    position: absolute;
-    bottom: 0;
-} */
-
-
+#del{
+    background-color: rgb(252, 87, 27);
+    margin-left: 1rem;
+}
+#edit{
+    background-color: rgb(52, 255, 106);
+    margin-right: 1rem;
+}
+#del:hover,#edit:hover{
+    cursor: pointer;
+}
+#edit:hover{
+    background-color: rgb(188, 255, 188);
+}
+#del:hover{
+    background-color: rgb(255, 200, 188);
+}
 
 /* Scroll bar */
 
@@ -184,7 +195,7 @@ text-transform:uppercase;
     /* background-color: aqua; */
 }
 .blog-content{
-    white-space: pre-wrap;
+    white-space: pre-line;
     line-height: 33px;
     word-spacing: 7px;
     font-size: 20px;
