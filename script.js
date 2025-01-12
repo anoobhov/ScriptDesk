@@ -65,10 +65,30 @@ Renewable energy is not just a technological advancement; it is a societal trans
     likes: 45,
   },
   {
+    title: "Elon Musk's Role in U.S. Politics: A Billionaire's Influence",
+    author: "James Taylor",
+    date: "12 Jan 2024",
+    image: "./images/elon_politics.webp",
+    content:
+      "Elon Musk's comments and actions have stirred debates in U.S. politics, from free speech on X (formerly Twitter) to his stance on renewable energy policies. Explore his growing influence in the political landscape.",
+    categories: ["Politics", "Influence"],
+    likes: 375,
+  },
+  {
+    title: "Squid Game: The Dark Mirror of Society",
+    author: "Liam Parker",
+    date: "15 Jan 2024",
+    image: "./images/squid_game.jpg",
+    content:
+      "Squid Game took the world by storm with its gripping story and social commentary. Explore the themes and lessons behind this Netflix phenomenon.",
+    categories: ["Entertainment", "Drama"],
+    likes: 532,
+  },
+  {
     title: "Designing for Accessibility",
     author: "Sophia Martinez",
     date: "05 Feb 2024",
-    image:"./images/solar_panel.jpg",
+    image:"./images/accessibility-og.jpg",
     content:
       "Accessibility in design ensures that your products can be used by everyone, including those with disabilities. Explore tips and tools for creating inclusive user experiences.",
     categories: ["Design", "Inclusion"],
@@ -78,7 +98,7 @@ Renewable energy is not just a technological advancement; it is a societal trans
     title: "The Rise of AI in Everyday Life",
     author: "James Turner",
     date: "12 Mar 2024",
-    image:"./images/solar_panel.jpg",
+    image:"./images/ai.avif",
     content:
       "Artificial Intelligence is no longer confined to research labs. From smart assistants to self-driving cars, discover how AI is shaping our daily lives.",
     categories: ["Technology"],
@@ -88,7 +108,7 @@ Renewable energy is not just a technological advancement; it is a societal trans
     title: "Minimalist Living: A Lifestyle Revolution",
     author: "Emily Johnson",
     date: "28 Feb 2024",
-    image:"./images/solar_panel.jpg",
+    image:"./images/mini.jpg",
     content:
       "Minimalism is not just about owning less; it's about creating more space for what truly matters. Learn how to declutter your life and find true happiness.",
     categories: ["Lifestyle"],
@@ -98,7 +118,7 @@ Renewable energy is not just a technological advancement; it is a societal trans
     title: "The Evolution of Blockchain Technology",
     author: "Liam O'Connor",
     date: "10 Apr 2024",
-    image:"./images/solar_panel.jpg",
+    image:"./images/blockchains.png",
     content:
       "Blockchain is more than just cryptocurrency. Delve into its applications in industries like healthcare, finance, and supply chain management.",
     categories: ["Technology", "Finance"],
@@ -108,7 +128,7 @@ Renewable energy is not just a technological advancement; it is a societal trans
     title: "The Art of Sustainable Fashion",
     author: "Olivia Brown",
     date: "22 Mar 2024",
-    image:"./images/solar_panel.jpg",
+    image:"./images/sustainable.avif",
     content:
       "Fast fashion is out, and sustainability is in. Discover how the fashion industry is evolving to embrace eco-friendly practices.",
     categories: ["Fashion", "Sustainability"],
@@ -118,23 +138,102 @@ Renewable energy is not just a technological advancement; it is a societal trans
     title: "Understanding Mental Health in the Digital Age",
     author: "Noah Davis",
     date: "15 Jan 2024",
-    image:"./images/solar_panel.jpg",
+    image:"./images/sm.png",
     content:
       "The internet and social media have transformed how we connect, but at what cost? Explore strategies to maintain mental well-being in a hyperconnected world.",
     categories: ["Health", "Lifestyle"],
     likes: 342,
   },
+  {
+    title: "Mastering the Art of Cooking at Home",
+    author: "Linda Harper",
+    date: "20 Feb 2024",
+    image: "./images/cook.webp",
+    content:
+      "Cooking at home is both an art and a science. Learn essential tips and tricks to elevate your culinary skills.",
+    categories: ["Food", "Lifestyle"],
+    likes: 273,
+  },
+  {
+    title: "The Art of Mindful Living",
+    author: "Olivia Thompson",
+    date: "8 Mar 2024",
+    image: "./images/mindful.jpg",
+    content:
+      "Mindfulness is the key to inner peace. Learn how to incorporate mindfulness practices into your daily life.",
+    categories: ["Lifestyle", "Wellness"],
+    likes: 241,
+  },
+  {
+    title: "The Rise of Electric Vehicles",
+    author: "Rachel Adams",
+    date: "22 Feb 2024",
+    image: "./images/electric_vehicles.jpg",
+    content:
+      "Electric vehicles are driving the future of transportation. Dive into the advancements and challenges of this growing industry.",
+    categories: ["Technology", "Environment"],
+    likes: 205,
+  },
+  {
+    title: "Top 10 Cartoons That Defined Our Childhood",
+    author: "Sophia White",
+    date: "12 Mar 2024",
+    image: "./images/childhood_cartoons.webp",
+    content:
+      "Relive the nostalgia with these iconic cartoons that shaped generations, from Looney Tunes to SpongeBob SquarePants.",
+    categories: ["Nostalgia", "Entertainment"],
+    likes: 378,
+  },
+  {
+    title: "Tom and Jerry: The Timeless Chase",
+    author: "Liam Parker",
+    date: "10 Jan 2024",
+    image: "./images/tom_and_jerry.jpg",
+    content:
+      "Few shows have captured the hearts of viewers like Tom and Jerry. Dive into the magic of this iconic duo and their hilarious antics.",
+    categories: ["Nostalgia", "Animation"],
+    likes: 412,
+  },
+  {
+    title: "Ben 10: A Hero’s Journey Through Time",
+    author: "Sophia White",
+    date: "18 Feb 2024",
+    image: "./images/ben10.jpg",
+    content:
+      "Ben 10 redefined the superhero genre for kids. Explore how this adventurous series continues to inspire young fans worldwide.",
+    categories: ["Action", "Cartoons"],
+    likes: 325,
+  },
+  {
+    title: "The Latent Show: A Comic Genius on the Rise",
+    author: "Ethan Kim",
+    date: "10 Mar 2024",
+    image: "./images/latent_show.jpg",
+    content:
+      "Samay Raina’s Latent Show blends comedy, chess, and life’s quirky moments. Discover why it’s one of the most innovative shows in recent years.",
+    categories: ["Comedy", "Entertainment"],
+    likes: 289,
+  },
 ];
 let drafts = [
   {
-    title: "Minimalist Living: A Lifestyle Revolution",
-    author: "Emily Johnson",
-    date: "28 Feb 2024",
-    image:"./images/solar_panel.jpg",
+    title: "The Quiet Power of Reading: Why Books Matter More Than Ever",
+    author: "Emily Carter",
+    date: "12 Jan 2024",
+    image: "./images/reading_books.jpg",
     content:
-      "Minimalism is not just about owning less; it's about creating more space for what truly matters. Learn how to declutter your life and find true happiness.",
-    categories: ["Lifestyle"],
-    likes: 212,
+      "In a world filled with constant distractions, books offer a sanctuary for the mind. Discover how reading fosters creativity, empathy, and critical thinking in today’s fast-paced life.",
+    categories: ["Lifestyle", "Education"],
+  },
+  {
+    title: "The Magic of Stargazing: Connecting with the Universe",
+    author: "Liam Parker",
+    date: "14 Jan 2024",
+    image: "./images/stargazing.jpg",
+    content:
+      "Stargazing is more than a hobby—it’s a way to reconnect with the universe and find peace in the vastness of the cosmos. Learn tips for beginners and the best spots to start your journey.",
+    categories: ["Science", "Lifestyle"],
+    likes: 372,
   },
 ];
 //typing animation
