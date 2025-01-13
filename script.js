@@ -896,3 +896,48 @@ function notes(){
   })
   })
 }
+
+
+//light and dark mode
+let lyt_drk = document.getElementById('lyt_drk')
+lyt_drk.addEventListener('click',()=>{
+  if(lyt_drk.textContent==="Light-Mode")
+  {
+    lyt_drk.textContent="Dark-Mode"
+    document.body.classList.add('dark-mode');
+    document.getElementById('navbar').classList.add('dark-mode')
+    document.getElementById('logo').classList.add('dark-mode')
+    let btn = document.getElementsByClassName('btn')
+    for(let i = 0;i<btn.length;i++){
+      btn[i].classList.add('dark-mode')
+    }
+    document.querySelector('footer').classList.add('dark-mode')
+    document.querySelector('#typingText').classList.add('dark-mode')
+    document.querySelector('#Share').classList.add('dark-mode')
+    document.querySelector('#cursor').classList.add('dark-mode')
+    let dot = document.getElementsByClassName('dot')
+    for(let i=0;i<70;i++){
+      dot[i].classList.add('dark-mode')
+    }
+  }
+  else
+    {
+      lyt_drk.textContent="Light-Mode"
+      document.body.classList.remove('dark-mode');
+      document.getElementById('navbar').classList.remove('dark-mode')
+      document.getElementById('logo').classList.remove('dark-mode')
+      let btn = document.getElementsByClassName('btn')
+      for(let i = 0;i<btn.length;i++){
+        btn[i].classList.remove('dark-mode')
+    }
+    document.querySelector('footer').classList.remove('dark-mode')
+    document.querySelector('footer').classList.remove('dark-mode')
+    document.querySelector('#typingText').classList.remove('dark-mode')
+    document.querySelector('#Share').classList.remove('dark-mode')
+    document.querySelector('#cursor').classList.remove('dark-mode')
+    let dot = document.getElementsByClassName('dot')
+    for(let i=0;i<70;i++){
+      dot[i].classList.remove('dark-mode')
+    }
+    }
+})
