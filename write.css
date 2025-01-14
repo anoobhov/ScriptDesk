@@ -19,6 +19,10 @@
     border: none;
     border-radius: 8px;
 }
+#title-section.dark-mode{
+    background-color: rgb(0, 83, 56);
+    color: beige;
+}
 
 li {
 	margin-left: 16px;
@@ -30,14 +34,17 @@ a {
 .container {
 	max-width: 991px;
 	width: 100%;
-    background: white;
     /* background:linear-gradient(135deg,rgb(255, 172, 186),rgb(255, 241, 184)); */
 	border-radius: 8px;
 	/* overflow: hidden; */
 }
+
 .toolbar {
 	padding: 16px;
-	background: #eee;
+	background: #ffffff;
+}
+.toolbar.dark-mode{
+    background-color: rgb(0, 93, 62);
 }
 .toolbar .head {
 	display: flex;
@@ -49,19 +56,19 @@ a {
 	max-width: 100px;
 	padding: 6px 10px;
 	border-radius: 6px;
-	border: 2px solid #ddd;
+	border: 2px solid #676666;
 	outline: none;
 }
 .toolbar .head select {
-	background: #fff;
+	background: #e8e7e7;
 	border: 2px solid #ddd;
 	border-radius: 6px;
 	outline: none;
 	cursor: pointer;
 }
 .toolbar .head .color {
-	background: #fff;
-	border: 2px solid #ddd;
+	background: white;
+	border: 2px solid #ffffff;
 	border-radius: 6px;
 	outline: none;
 	cursor: pointer;
@@ -78,7 +85,7 @@ a {
 	padding: 0;
 	width: 26px;
 	height: 26px;
-	background: #fff;
+	background: #9c8686;
 	cursor: pointer;
 }
 .toolbar .head .color input::-moz-color-swatch {
@@ -94,7 +101,7 @@ a {
 	grid-gap: 10px;
 }
 .toolbar .btn-toolbar button {
-	background: #fff;
+	background: #836a6a;
 	border: 2px solid #ddd;
 	border-radius: 6px;
 	cursor: pointer;
@@ -113,6 +120,10 @@ a {
 	outline: none;
 	height: 50vh;
 	overflow: auto;
+}
+#content.dark-mode{
+    color: white;
+    background-color: rgb(0, 83, 56);;
 }
 
 /* Image insertion */

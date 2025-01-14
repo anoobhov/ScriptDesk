@@ -89,11 +89,17 @@ nav{
 ::-webkit-scrollbar-track {
     background:linear-gradient(120deg,rgb(207, 206, 206,0.8),rgb(254, 240, 214)); 
 }
+.dark-mode::-webkit-scrollbar-track {
+    background:linear-gradient(120deg,rgba(0, 0, 0, 0.8),rgb(1, 104, 62)); 
+}
 
 /* draggable part */
 ::-webkit-scrollbar-thumb {
     background: linear-gradient(135deg,rgb(254, 153, 170),rgb(255, 234, 152));
     border-radius: 2xpx; /* Rounded corners */
+}
+.dark-mode::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg,rgb(2, 206, 32),rgb(22, 175, 150));
 }
 
 ::-webkit-scrollbar-thumb:hover {

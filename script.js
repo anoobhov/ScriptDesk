@@ -900,44 +900,96 @@ function notes(){
 
 //light and dark mode
 let lyt_drk = document.getElementById('lyt_drk')
+function toggleLightMode(isLightMode){
+  const elementsToToggle = [
+    document.body,
+    document.getElementById('navbar'),
+    document.getElementById('logo'),
+    document.querySelector('footer'),
+    document.querySelector('#typingText'),
+    document.querySelector('#Share'),
+    document.querySelector('#cursor'),
+    document.getElementById('fltr-txt'),
+    document.getElementById('content'),
+    document.getElementById('title-section')
+
+  ];
+
+  // Add elements from the collections
+  const btn = document.getElementsByClassName('btn');
+  const dot = document.getElementsByClassName('dot');
+  const card = document.getElementsByClassName('card')
+  const link = document.getElementsByClassName('links')
+  const fltr = document.getElementsByClassName('fltr-name')
+  const blog_content = document.getElementsByClassName('blog-content')
+  const toolbar = document.getElementsByClassName('toolbar')
+  elementsToToggle.push(...btn, ...dot, ...card,...link,...fltr,...blog_content,...toolbar);
+
+  // Toggle 'dark-mode' class for all elements
+  elementsToToggle.forEach(element => {
+    if (element) {
+      element.classList.toggle('dark-mode', !isLightMode);
+    }
+  });
+}
 lyt_drk.addEventListener('click',()=>{
-  if(lyt_drk.textContent==="Light-Mode")
-  {
-    lyt_drk.textContent="Dark-Mode"
-    document.body.classList.add('dark-mode');
-    document.getElementById('navbar').classList.add('dark-mode')
-    document.getElementById('logo').classList.add('dark-mode')
-    let btn = document.getElementsByClassName('btn')
-    for(let i = 0;i<btn.length;i++){
-      btn[i].classList.add('dark-mode')
-    }
-    document.querySelector('footer').classList.add('dark-mode')
-    document.querySelector('#typingText').classList.add('dark-mode')
-    document.querySelector('#Share').classList.add('dark-mode')
-    document.querySelector('#cursor').classList.add('dark-mode')
-    let dot = document.getElementsByClassName('dot')
-    for(let i=0;i<70;i++){
-      dot[i].classList.add('dark-mode')
-    }
-  }
-  else
-    {
-      lyt_drk.textContent="Light-Mode"
-      document.body.classList.remove('dark-mode');
-      document.getElementById('navbar').classList.remove('dark-mode')
-      document.getElementById('logo').classList.remove('dark-mode')
-      let btn = document.getElementsByClassName('btn')
-      for(let i = 0;i<btn.length;i++){
-        btn[i].classList.remove('dark-mode')
-    }
-    document.querySelector('footer').classList.remove('dark-mode')
-    document.querySelector('footer').classList.remove('dark-mode')
-    document.querySelector('#typingText').classList.remove('dark-mode')
-    document.querySelector('#Share').classList.remove('dark-mode')
-    document.querySelector('#cursor').classList.remove('dark-mode')
-    let dot = document.getElementsByClassName('dot')
-    for(let i=0;i<70;i++){
-      dot[i].classList.remove('dark-mode')
-    }
-    }
+  const isLightMode = lyt_drk.textContent === "Light-Mode";
+  lyt_drk.textContent = isLightMode ? "Dark-Mode" : "Light-Mode";
+
+  // Save the preference in localStorage
+  localStorage.setItem('theme', isLightMode ? 'light' : 'dark');
+
+  // Toggle light mode
+  toggleLightMode(isLightMode);
 })
+    // if(lyt_drk.textContent==="Light-Mode")
+  // {
+  //   lyt_drk.textContent="Dark-Mode"
+  //   document.body.classList.add('dark-mode');
+  //   document.getElementById('navbar').classList.add('dark-mode')
+  //   document.getElementById('logo').classList.add('dark-mode')
+  //   let btn = document.getElementsByClassName('btn')
+  //   for(let i = 0;i<btn.length;i++){
+  //     btn[i].classList.add('dark-mode')
+  //   }
+  //   document.querySelector('footer').classList.add('dark-mode')
+  //   document.querySelector('#typingText').classList.add('dark-mode')
+  //   document.querySelector('#Share').classList.add('dark-mode')
+  //   document.querySelector('#cursor').classList.add('dark-mode')
+  //   let dot = document.getElementsByClassName('dot')
+  //   for(let i=0;i<70;i++){
+  //     dot[i].classList.add('dark-mode')
+  //   }
+  // }
+  // else
+  //   {
+  //     lyt_drk.textContent="Light-Mode"
+  //     document.body.classList.remove('dark-mode');
+  //     document.getElementById('navbar').classList.remove('dark-mode')
+  //     document.getElementById('logo').classList.remove('dark-mode')
+  //     let btn = document.getElementsByClassName('btn')
+  //     for(let i = 0;i<btn.length;i++){
+  //       btn[i].classList.remove('dark-mode')
+  //   }
+  //   document.querySelector('footer').classList.remove('dark-mode')
+  //   document.querySelector('footer').classList.remove('dark-mode')
+  //   document.querySelector('#typingText').classList.remove('dark-mode')
+  //   document.querySelector('#Share').classList.remove('dark-mode')
+  //   document.querySelector('#cursor').classList.remove('dark-mode')
+  //   let dot = document.getElementsByClassName('dot')
+  //   for(let i=0;i<70;i++){
+  //     dot[i].classList.remove('dark-mode')
+  //   }
+  //   }
+
+
+window.addEventListener('DOMContentLoaded', () => {
+  const theme = localStorage.getItem('theme') || 'light';
+  const isLightMode = theme === 'light';
+
+  // Update button text
+  lyt_drk.textContent = isLightMode ? "Light-Mode" : "Dark-Mode";
+
+  // Apply the mode
+  toggleLightMode(isLightMode);
+});
