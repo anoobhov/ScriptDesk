@@ -17,35 +17,29 @@
     text-align: center;
     outline: none;
     border: none;
-    border-radius: 8px;
+    /* border-radius: 8px; */
 }
 #title-section.dark-mode{
-    background-color: rgb(0, 83, 56);
+    background: linear-gradient(90deg,rgb(2, 17, 12),rgb(0, 53, 0));
     color: beige;
 }
 
-li {
-	margin-left: 16px;
-}
-a {
-	cursor: pointer;
-}
+li {margin-left: 16px;}
+a {cursor: pointer;}
 
 .container {
 	max-width: 991px;
 	width: 100%;
-    /* background:linear-gradient(135deg,rgb(255, 172, 186),rgb(255, 241, 184)); */
+    background:rgb(235, 234, 234);
 	border-radius: 8px;
 	/* overflow: hidden; */
 }
 
 .toolbar {
 	padding: 16px;
-	background: #ffffff;
+	background: #fbd2d2;
 }
-.toolbar.dark-mode{
-    background-color: rgb(0, 93, 62);
-}
+.toolbar.dark-mode{background-color: rgb(4, 61, 42);}
 .toolbar .head {
 	display: flex;
 	grid-gap: 10px;
@@ -60,14 +54,18 @@ a {
 	outline: none;
 }
 .toolbar .head select {
-	background: #e8e7e7;
-	border: 2px solid #ddd;
+	background: #ffffff;
+	border: 2px solid #000000;
 	border-radius: 6px;
 	outline: none;
 	cursor: pointer;
 }
+.toolbar .head select.toolbar.dark-mode{
+    color: white;
+    background: #000000;
+}
 .toolbar .head .color {
-	background: white;
+	background: rgb(150, 123, 123);
 	border: 2px solid #ffffff;
 	border-radius: 6px;
 	outline: none;
@@ -77,9 +75,7 @@ a {
 	grid-gap: 6px;
 	padding: 0 10px;
 }
-.toolbar .head .color span {
-	font-size: 14px;
-}
+.toolbar .head .color span {font-size: 14px;}
 .toolbar .head .color input {
 	border: none;
 	padding: 0;
@@ -112,9 +108,7 @@ a {
 	justify-content: center;
 	font-size: 18px;
 }
-.toolbar .btn-toolbar button:hover {
-	background: #f3f3f3;
-}
+.toolbar .btn-toolbar button:hover {background: #f3f3f3;}
 #content {
 	padding: 16px;
 	outline: none;
@@ -123,7 +117,7 @@ a {
 }
 #content.dark-mode{
     color: white;
-    background-color: rgb(0, 83, 56);;
+    background: linear-gradient(90deg,rgb(2, 17, 12),rgb(0, 53, 0));
 }
 
 /* Image insertion */
@@ -157,9 +151,7 @@ a {
     font-size: larger;
     margin-left: 2rem;
 }
-.button:active{
-    transform: scale(0.9);
-}
+.button:active{transform: scale(0.9);}
 #pub-dft-btns{
     text-align: center;
     margin-top: 2rem;
@@ -169,15 +161,9 @@ a {
     background-color: rgb(6, 199, 6);
     margin-left: 2rem;
 }
-#publish-btn:hover{
-    background: rgb(7, 131, 7);
-}
-#draft-btn{
-    background-color: black;
-}
-#draft-btn:hover{
-    background: rgb(56, 55, 55);
-}
+#publish-btn:hover{background: rgb(7, 131, 7);}
+#draft-btn{background-color: black;}
+#draft-btn:hover{background: rgb(56, 55, 55);}
 
 
 #dividing{
@@ -186,9 +172,7 @@ a {
     justify-content: space-between;
 }
 /* Notes section */
-#notes-section{
-    padding-right: 2rem;
-}
+#notes-section{padding-right: 2rem;}
 .text-prt-notes{
     font-size: larger;
     margin-left: 1rem;
@@ -201,12 +185,8 @@ a {
     outline: none;
     
 }
-#note_it:hover{
-    background:linear-gradient(270deg,rgb(98, 98, 98),rgb(254, 240, 214)) ;
-}
-#note_it:active{
-    transform: scale(0.9);
-}
+#note_it:hover{background:linear-gradient(270deg,rgb(98, 98, 98),rgb(254, 240, 214)) ;}
+#note_it:active{ transform: scale(0.9);}
 .noting{
     width: auto;
     background-color: red;
@@ -217,4 +197,13 @@ a {
 .noting>span{
     float: right;
     cursor: pointer;
+}
+
+@media (max-width:600px){
+    #dividing{
+        flex-direction: column;
+    }
+    #main-area{
+        width: 100%;
+    }
 }

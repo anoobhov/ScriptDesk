@@ -1,5 +1,6 @@
 body{
     overflow: hidden;
+    width: 100%;
   }
   main{
       display: flex;
@@ -74,3 +75,45 @@ body{
         opacity: 0;
       }
     }
+
+@media (max-width:960px)
+{
+  #Share,#typingText,.cursor{
+    font-size: 3rem;
+  }
+  .rw{
+    padding: 0.3rem;
+    font-size: x-large;
+    border-radius: 3px;
+    letter-spacing: 3px;
+}
+}
+
+@media(max-width:600px){
+  #Share,#typingText,.cursor{
+    font-size: 2rem;
+  }
+  .read_write{
+    display: inline-flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.rw{
+  margin-top: 20px;
+  margin-left: 20px;
+}
+.pic img{
+  width: 230px;
+  height: auto;
+}
+}
+
+/* hamburger */
+@media(max-width:445px){
+  .pic{
+    display: none;
+  }
+  .line{
+    width: auto;
+  }
+}

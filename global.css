@@ -24,15 +24,7 @@ body.dark-mode {
     z-index: 10;
 }
 #navbar.dark-mode{
-    display: flex;
-    position: fixed;
-    width: 100%;
-    justify-content: space-between;
-    padding: 1.5rem;
     background: linear-gradient(270deg,rgb(0, 55, 50),rgb(53, 53, 53));
-    backdrop-filter: blur(10px);
-    align-items: baseline;
-    z-index: 10;
 }
 #logo{
     font-weight: bolder;
@@ -127,3 +119,34 @@ nav{
     50% { transform: translateY(-50px); opacity: 0.5; }
     100% { transform: translateY(0); opacity: 1; }
 }
+
+@media (max-width:960px){
+    body{
+        font-size: 0.7rem;
+    }
+    #navbar{
+    padding: 1rem;
+    }
+    #logo{
+        font-size: 1.1rem;
+        text-shadow: 
+        0 0 5px white, /* Inner glow */
+        0 0 10px white, /* Outer glow */
+        0 0 15px rgb(255, 229, 181) /* Extended outer glow */
+    }
+    .btn{
+        margin-right: 0.5rem;
+        padding: 9px;
+        border-radius: 3px;
+    }
+    #lyt_drk{
+        margin-right: 1rem;
+        font-size: 0.7rem;
+    }
+    .dot {
+        width: 9px;
+        height: 9px;
+    }
+}
+
+    

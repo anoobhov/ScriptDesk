@@ -583,7 +583,7 @@ card.addEventListener('click', function () {
     <h1 class="blog-head">&lt;${test_blog.title}&gt;</h1>
     <p class="blog-author" >${test_blog.author} -- ${test_blog.date}</p>
     <hr>
-    <p class="blog-content">${test_blog.content}</p>
+    <p class="blog-content ">${test_blog.content}</p>
   `;
   let dots = document.getElementsByClassName('dot')
   for (let i = 0; i < 70; i++) {
@@ -911,7 +911,8 @@ function toggleLightMode(isLightMode){
     document.querySelector('#cursor'),
     document.getElementById('fltr-txt'),
     document.getElementById('content'),
-    document.getElementById('title-section')
+    document.getElementById('title-section'),
+    document.getElementById('blog-content')
 
   ];
 
