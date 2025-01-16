@@ -14,8 +14,8 @@
   - Upload date
 - 💾 **Save Drafts**: Writers can save their blogs as drafts and return to complete them later.
 - 📝 **Add Notes**: A dedicated space for writers to brainstorm and jot down ideas.
-- 🎨 **Clean UI**: Built with a focus on aesthetics and usability.
-
+- 🎨 **Responsive UI**: The platform offers a seamless experience across devices.
+- 🌙 **DarkMode**: Switch effortlessly between dark and light modes to suit your preference and reduce eye strain.
 ---
 
 ## Tech Stack
@@ -33,9 +33,8 @@
    git clone https://github.com/your-username/scriptdesk.git
    cd scriptdesk
 
-
 ## Future Improvements
+- Enable sharing blogs via social media or email.
 - Add user authentication for personalized experiences.
 - Implement a database to store blogs, drafts, notes, and user details.
 - Create a backend using a framework like Node.js for scalability.
-- Enable sharing blogs via social media or email.
