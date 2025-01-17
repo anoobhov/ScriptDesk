@@ -3,6 +3,8 @@
 **ScriptDesk** is a blog website designed specifically for writers. It provides a platform where users can write and read blogs, filter them and even save blogs as drafts instead of publishing for future enhancements. Writers can also add personal notes to brainstorm and organize their ideas effectively.
 
 ---
+<img width="500" alt="{9E2A255B-45F0-45D4-BB02-05499BAE0CEB}" src="https://github.com/user-attachments/assets/89789849-437e-4f7c-8e38-cdbb4bed9f1a" />
+<img width="500" alt="{1D257E9E-5CC0-47B8-997A-1394DBD2E9A1}" src="https://github.com/user-attachments/assets/12ab46eb-1389-43c2-853a-39e2ba99eb9a" />
 
 ## Features
 
