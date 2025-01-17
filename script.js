@@ -912,8 +912,8 @@ function toggleLightMode(isLightMode){
     document.getElementById('fltr-txt'),
     document.getElementById('content'),
     document.getElementById('title-section'),
-    document.getElementById('blog-content')
-
+    document.getElementById('blog-content'),
+    document.getElementById('sidebar')
   ];
 
   // Add elements from the collections

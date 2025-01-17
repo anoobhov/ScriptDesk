@@ -82,9 +82,13 @@ body.dark-mode {
     padding: 2rem;
     width: 30vh;
     /* height: 100vh; */
-    background-color: lightgreen;
+    background-color: rgb(255, 206, 115);
     z-index: 10;
     border-radius: 6px;
+    box-shadow: 0px 0px 1px 1px orange;
+}
+#sidebar.dark-mode{
+    background-color:lightgreen;
     box-shadow: 0px 0px 1px 1px green;
 }
 .sidebarbtn{
