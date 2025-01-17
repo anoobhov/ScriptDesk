@@ -994,3 +994,28 @@ window.addEventListener('DOMContentLoaded', () => {
   // Apply the mode
   toggleLightMode(isLightMode);
 });
+
+let lyt_drks = document.getElementById('lyt_drks')
+document.getElementById('mobilehamburger').addEventListener("click",(event)=>{
+  document.getElementById("sidebar").style.display='flex'
+    // console.log(event.target.id)
+    if(event.target.id==='closesidebar')
+    {
+    document.getElementById("sidebar").style.display ="none"
+    }
+
+    else if(event.target.id==='lyt_drks')
+    {
+      const isLightMode = event.target.textContent === "Light-Mode"
+      lyt_drks.textContent = isLightMode ? "Dark-Mode" : "Light-Mode";
+
+      // Save the preference in localStorage
+  localStorage.setItem('theme', isLightMode ? 'light' : 'dark');
+
+  // Toggle light mode
+  toggleLightMode(isLightMode);
+  }
+    
+
+  
+})
