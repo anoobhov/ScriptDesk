@@ -44,6 +44,7 @@ body.dark-mode {
     0 0 20px rgb(7, 73, 0), /* Outer glow */
     0 0 30px rgb(239, 156, 2) /* Extended outer glow */
 }
+#logo:hover{cursor: pointer;}
 .btn{
     text-align: center;
     margin-right: 1rem;
@@ -54,26 +55,17 @@ body.dark-mode {
     border: none;
     color: rgb(33, 0, 99);
 }
-#lyt_drk{
-    margin-right: 2rem;
-}
+#lyt_drk{margin-right: 2rem;}
 .btn.dark-mode{
     color: white;
     background: linear-gradient(135deg,rgb(2, 126, 20),rgb(1, 178, 148));
 }
-.btn:hover{
-    background: linear-gradient(135deg,rgb(255, 102, 128),rgb(253, 217, 73));
-    /* transform: scale(1.1); */
-}
-.btn:hover.dark-mode{
-    background: linear-gradient(135deg,rgb(3, 99, 17),rgb(1, 122, 102));
-}
+.btn:hover{background: linear-gradient(135deg,rgb(255, 102, 128),rgb(253, 217, 73));}
+.btn:hover.dark-mode{background: linear-gradient(135deg,rgb(3, 99, 17),rgb(1, 122, 102));}
 #allscreensizenav{
     margin-right: 0.5rem;
 }
-#mobilehamburger{
-    display: none;
-}
+#mobilehamburger{display: none;}
 #sidebar{
     position: absolute;
     display: none;

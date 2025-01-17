@@ -198,7 +198,13 @@ a {cursor: pointer;}
     float: right;
     cursor: pointer;
 }
-
+.image{margin-top: 3rem;}
+#imglink{
+    padding: 10px;
+    outline: none;
+    border-radius: 10px;
+    border: none;
+}
 @media (max-width:600px){
     #dividing{
         flex-direction: column;
