@@ -4,7 +4,7 @@
 }
 
 body{
-    height: 100vh;
+    min-height: 100vh;
     overflow-x: hidden;
     background: linear-gradient(270deg,rgb(207, 206, 206),rgb(254, 240, 214));
     color: black;

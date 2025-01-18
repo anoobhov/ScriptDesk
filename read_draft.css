@@ -24,6 +24,7 @@
     backdrop-filter: blur(20px);
     padding: 5px;
     box-shadow: 0px 0px 1px 1px orange;
+    overflow-x: scroll;
 }
 #fltr-txt.dark-mode{
     color: rgb(254, 224, 153);
@@ -143,6 +144,7 @@
     }
     #filter{
         margin-top: 70px;
+        overflow-x: scroll;
     }
     .fltr{
         padding: 1px;
@@ -159,20 +161,20 @@
     }
 }
 @media(max-width:453px){
-    .fltr-name,#fltr-txt{
+    /* .fltr-name,#fltr-txt{
         display: none;
-    }
-    #fltr-txt-small{
+    } */
+    /* #fltr-txt-small{
         display: inline;
     font-size: x-small;
     margin-left: 0.5rem;
     margin-right: 10px;
     color: rgb(200, 143, 200);
     /* font-weight: bold; */
-    border-radius: 5px;
+    /* border-radius: 5px;
     background-color: transparent;
     backdrop-filter: blur(20px);
     padding: 1px;
     box-shadow: 0px 0px 1px 1px orange;
-    }
+    } */ 
 }
