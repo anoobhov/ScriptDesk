@@ -335,6 +335,7 @@ document.addEventListener('DOMContentLoaded', () => {
         drafts = JSON.parse(savedDrafts);
         }
       displaydrafts(drafts)
+      publish_draft()
     
     }
 });
@@ -343,8 +344,8 @@ document.addEventListener('DOMContentLoaded', () => {
 //likes counting
 // const button = getElementById('like-btn')
 // function incrementLikes(button) {
-//   const likeCountSpan = button.nextElementSibling; // Get the span next to the button
-//   let currentLikes = parseInt(likeCountSpan.textContent, 10); // Get current like count
+//   const likeCountSpan = button.nextElementSibling;
+//   let currentLikes = parseInt(likeCountSpan.textContent, 10);
 //   if (button.classList.contains('liked')) {
 //     // If liked, decrement the count and remove 'liked' class
 //     likeCountSpan.textContent = currentLikes - 1;
@@ -434,7 +435,6 @@ card.addEventListener('click', function () {
 });
 cards.appendChild(card)
 }
-
 }
 
 function displaydrafts(drafts){
@@ -494,9 +494,7 @@ function displaydrafts(drafts){
   edit_del.addEventListener('click',(event)=>{
     if(event.target.id==='edit')
     {
-      // console.log(test_blog.title)
-      window.location.href = 'write.html'
-      document.getElementById('title-section').value = test_blog.title
+      
     }
     else if(event.target.id==='del'){
       card.remove()
@@ -667,7 +665,8 @@ document.querySelector('#publish-btn').addEventListener('click',(event)=>{
   let likes = 0
   const date = date_filler();
   let image = './images/no_image.jpg'
-  image = document.getElementById('imglink').value
+  // console.log(image)
+  // image = console.log(document.getElementById('imglink').value)
   if (!title || !content) {
     warning.textContent = 'Please fill out all fields before publishing.';
     warning.style.color = 'red';
