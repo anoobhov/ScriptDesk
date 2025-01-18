@@ -239,10 +239,10 @@ let drafts = [
 //typing animation
 function animation(){
 const texts = ["<Experiences>", "<Ideas>", "<Stories>", "<Dreams>", "<Thoughts>", "<Memories>"];
-const typingSpeed = 150;
-const erasingSpeed = 100;
-const delayBetweenWords = 1500; // Delay between words
-const delayBeforeNextWord = 500;
+const typingSpeed = 30;
+const erasingSpeed = 20;
+const delayBetweenWords = 800; // Delay between words
+const delayBeforeNextWord = 200;
 let textIndex = 0;
 let charIndex = 0;
 let isErasing = false;
@@ -494,7 +494,9 @@ function displaydrafts(drafts){
   edit_del.addEventListener('click',(event)=>{
     if(event.target.id==='edit')
     {
-      
+      // console.log(test_blog.title)
+      window.location.href = 'write.html'
+      document.getElementById('title-section').value = test_blog.title
     }
     else if(event.target.id==='del'){
       card.remove()
@@ -694,16 +696,17 @@ document.querySelector('#draft-btn').addEventListener('click',(event)=>{
   event.preventDefault()
   const title = document.getElementById('title-section').value
   const content = document.getElementById('content').innerHTML
-  // console.log('button-clicked')
   let categories = []
-  // console.log(title)
-  // console.log(content)
   const author = 'You'
   const date = date_filler()
   categories.push(document.getElementById('categories').value)
-  const image = './images/no_image.jpg'
+
+  let image = document.getElementById("imglink").value
+  console.log(image)
+  if (image = ""){
+    image = './images/no_image.jpg'
+  }
   drafts.unshift({title,author,date,image,content,categories});
-  // console.log(drafts)
   localStorage.setItem('drafts', JSON.stringify(drafts));
   window.location.href = "drafts.html";
 })
