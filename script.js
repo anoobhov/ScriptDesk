@@ -1,7 +1,7 @@
 let blogs = [
   {
     title: "The Future of Renewable Energy",
-    author: "Ankit",
+    author: "Kunal Kamra",
     date: "17 Jan 2024",
     image:"./images/solar_panel.jpg",
     content:
@@ -152,7 +152,7 @@ In summary, "Squid Game" is not just a television series; it is a cultural pheno
     image:"./images/sustainable.avif",
     content:
       "Fast fashion is out, and sustainability is in. Discover how the fashion industry is evolving to embrace eco-friendly practices.",
-    categories: ["Fashion", "Sustainability"],
+    categories: ["Fashion"],
     likes: 212,
   },
   {
@@ -172,7 +172,7 @@ In summary, "Squid Game" is not just a television series; it is a cultural pheno
     image: "./images/cook.webp",
     content:
       "Cooking at home is both an art and a science. Learn essential tips and tricks to elevate your culinary skills.",
-    categories: ["Food"],
+    categories: ["Health"],
     likes: 273,
   },
   {
@@ -182,7 +182,7 @@ In summary, "Squid Game" is not just a television series; it is a cultural pheno
     image: "./images/mindful.jpg",
     content:
       "Mindfulness is the key to inner peace. Learn how to incorporate mindfulness practices into your daily life.",
-    categories: ["Lifestyle", "Wellness"],
+    categories: ["Lifestyle"],
     likes: 241,
   },
   {
@@ -192,7 +192,7 @@ In summary, "Squid Game" is not just a television series; it is a cultural pheno
     image: "./images/electric_vehicles.jpg",
     content:
       "Electric vehicles are driving the future of transportation. Dive into the advancements and challenges of this growing industry.",
-    categories: ["Technology", "Environment"],
+    categories: ["Technology"],
     likes: 205,
   },
   {
@@ -202,7 +202,7 @@ In summary, "Squid Game" is not just a television series; it is a cultural pheno
     image: "./images/childhood_cartoons.webp",
     content:
       "Relive the nostalgia with these iconic cartoons that shaped generations, from Looney Tunes to SpongeBob SquarePants.",
-    categories: ["Cartoon"],
+    categories: ["Entertainment"],
     likes: 378,
   },
   {
@@ -212,7 +212,7 @@ In summary, "Squid Game" is not just a television series; it is a cultural pheno
     image: "./images/tom_and_jerry.jpg",
     content:
       "Few shows have captured the hearts of viewers like Tom and Jerry. Dive into the magic of this iconic duo and their hilarious antics.",
-    categories: ["Cartoon"],
+    categories: ["Entertainment"],
     likes: 412,
   },
   {
@@ -222,7 +222,7 @@ In summary, "Squid Game" is not just a television series; it is a cultural pheno
     image: "./images/ben10.jpg",
     content:
       "Ben 10 redefined the superhero genre for kids. Explore how this adventurous series continues to inspire young fans worldwide.",
-    categories: ["Cartoon"],
+    categories: ["Entertainment"],
     likes: 325,
   },
   {
@@ -579,16 +579,16 @@ function sortBlogsByDate(order) {
 }
 
 //Function to sort by categories
-// function filterBlogsByCategory(selectedCategory) {
-//   if (selectedCategory === "") {
-//     displayblogs(blogs);
-//   } else {
-//     const filteredBlogs = blogs.filter((blog) =>
-//       blog.categories.includes(selectedCategory)
-//     );
-//     displayblogs(filteredBlogs);
-//   }
-// }
+function filterBlogsByCategory(selectedCategory) {
+  if (selectedCategory === "") {
+    displayblogs(blogs);
+  } else {
+    const filteredBlogs = blogs.filter((blog) =>
+      blog.categories.includes(selectedCategory)
+    );
+    displayblogs(filteredBlogs);
+  }
+}
 // Event listener for dropdown for date
 function event_listners_filtering(){
 document.getElementById("date-fltr").addEventListener("change", (event) => {
