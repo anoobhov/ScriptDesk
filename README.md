@@ -42,3 +42,4 @@ Comments has been added for easy understanding of the codes
 - Enable sharing blogs via social media.
 - Add user authentication
 - Implement a database to store blogs, drafts, notes, and user details.
+- Push original blogs more on feed (by adding a plagarism and AI detection in backend)
