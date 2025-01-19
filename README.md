@@ -23,12 +23,9 @@
 ---
 
 ## Tech Stack
-
-- **HTML**: Structure of the website.
-- **CSS**: Styling and layout for an attractive user interface.
-- **JavaScript**: Interactivity and dynamic features.
-Have maintained Flexible Code and used functions so that New features and updates can be integrated easily.
-Comments has been added for easy understanding of the codes
+- HTML,CSS & JS
+- Have maintained Flexible Code and used functions so that New features and updates can be integrated easily.
+  Comments have been added for easy understanding of the codes.
 ---
 
 ## Setup Instructions
@@ -37,9 +34,16 @@ Comments has been added for easy understanding of the codes
    ```bash
    git clone https://github.com/your-username/scriptdesk.git
    cd scriptdesk
+2. Open the index.html file(in browser)
 
 ## Future Improvements
 - Enable sharing blogs via social media.
 - Add user authentication
 - Implement a database to store blogs, drafts, notes, and user details.
 - Push original blogs more on feed (by adding a plagarism and AI detection in backend)
+- Add a live preview in text editor
+## Acknowledgements
+
+- This project's home page was inspired by the design and functionality of [Medium](https://medium.com). I have taken inspiration from its clean and user-friendly homepage to build the interface for this blog website.I would like to thank the creators of Medium for their innovative design, which served as a guiding light for this project.
+Rest of the pages are my personal creativity.
+- The contents of the blogs are AI generated.
