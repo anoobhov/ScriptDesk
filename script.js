@@ -107,7 +107,7 @@ In summary, "Squid Game" is not just a television series; it is a cultural pheno
   },
   {
     title: "Designing for Accessibility",
-    author: "Rohit",
+    author: "Amit Shah",
     date: "05 Feb 2024",
     image:"./images/accessibility-og.jpg",
     content:
@@ -519,7 +519,7 @@ function displaydrafts(drafts){
     console.log("clicked")
     if(event.target.id==='edit')
     {
-      // console.log
+      console.log(test_blog.title)
     }
     else if(event.target.id==='del'){
       card.remove()
@@ -692,7 +692,7 @@ document.querySelector('#publish-btn').addEventListener('click',(event)=>{
   let image = document.getElementById('imglink').value
   if(image=="")
   {
-  image = './images/no_image.jpg'
+    image = './images/no_image.jpg'
   }
   if (!title || !content || categories[0]=="") {
     warning.textContent = 'Please fill out all fields before publishing.';

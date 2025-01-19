@@ -20,8 +20,7 @@
     color: purple;
     font-weight: bold;
     border-radius: 5px;
-    background-color: transparent;
-    backdrop-filter: blur(20px);
+    background-color: rgb(1, 65, 1);
     padding: 5px;
     box-shadow: 0px 0px 1px 1px orange;
     overflow-x: scroll;
@@ -52,6 +51,7 @@
     margin-top: 1rem;
     background: linear-gradient(270deg,rgba(207, 206, 206,0.9),rgba(254, 240, 214,0.9));;
     border-radius: 5px;
+    animation: dropIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
 }
 .card.dark-mode{
     background: linear-gradient(270deg, rgb(0, 123, 110,0.9),rgb(62, 62, 62,0.9));
@@ -103,12 +103,7 @@
 .links:active{
     color: black;
 }
-#fltr-txt-small{
-    display: none;
-}
-.card{
-        animation: dropIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
-}
+
 @keyframes dropIn {
     0% {
         opacity: 0;
@@ -144,7 +139,6 @@
     }
     #filter{
         margin-top: 70px;
-        overflow-x: scroll;
     }
     .fltr{
         padding: 1px;
@@ -160,21 +154,18 @@
         font-size: x-small;
     }
 }
-@media(max-width:453px){
-    /* .fltr-name,#fltr-txt{
-        display: none;
-    } */
-    /* #fltr-txt-small{
-        display: inline;
-    font-size: x-small;
-    margin-left: 0.5rem;
-    margin-right: 10px;
-    color: rgb(200, 143, 200);
-    /* font-weight: bold; */
-    /* border-radius: 5px;
-    background-color: transparent;
-    backdrop-filter: blur(20px);
-    padding: 1px;
-    box-shadow: 0px 0px 1px 1px orange;
-    } */ 
+@media(max-width:460px){
+
+    #filter{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    #fltr-txt{
+        display: flex;
+        width:fit-content;
+        background-color: transparent;
+        
+    }
+    
 }
