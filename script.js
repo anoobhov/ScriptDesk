@@ -685,13 +685,16 @@ document.querySelector('#publish-btn').addEventListener('click',(event)=>{
   // console.log(content)
   const warning = document.getElementById('warning-message');
   const author = 'You'
-  const categories = ['Lifestyle']
+  let categories =[]
+  categories.push(document.getElementById("catergory-input").value)
   let likes = 0
   const date = date_filler();
-  let image = './images/no_image.jpg'
-  // console.log(image)
-  // image = console.log(document.getElementById('imglink').value)
-  if (!title || !content) {
+  let image = document.getElementById('imglink').value
+  if(image=="")
+  {
+  image = './images/no_image.jpg'
+  }
+  if (!title || !content || categories[0]=="") {
     warning.textContent = 'Please fill out all fields before publishing.';
     warning.style.color = 'red';
     return;
