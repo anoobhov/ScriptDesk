@@ -36,6 +36,24 @@
    cd scriptdesk
 2. Open the index.html file(in browser)
 
+## Project Structure
+
+```plaintext
+├── images/          --> Directory containing images & icons
+├── index.html       --> Landing Page HTML file
+├── write.html       --> Writing Section Page HTML file
+├── read.html        --> Reading Section Page HTML file
+├── drafts.html      --> Draft Section Page HTML file
+├── global.css       --> CSS File for global styling
+├── styles.css       --> CSS file for homepage(index.html)
+├── read_draft.css   --> Common CSS file for read& Drafts(similar designs)
+├── read.css         --> CSS file of read.html
+├── write.css        --> CSS file of write.html
+├── draft.css        --> CSS file of drafts.html
+├── script.js        --> JS file for all interactivity
+
+```
+
 ## Future Improvements
 - Enable sharing blogs via social media.
 - Add user authentication
